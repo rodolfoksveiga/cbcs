@@ -210,12 +210,13 @@
         }
     },
     "Building": {
-        "AgenciaBancaria": {
+        "AgeBan_00": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 8,
             "loads_convergence_tolerance_value": 0.04,
             "maximum_number_of_warmup_days": 25,
             "minimum_number_of_warmup_days": 6,
+            "north_axis": 0,
             "solar_distribution": "FullExterior",
             "temperature_convergence_tolerance_value": 0.4,
             "terrain": "Suburbs"
@@ -326,6 +327,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -350,6 +353,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN01_PV01_CO_RE_ATM_CLIENTES"
         },
         "Surface 5": {
@@ -389,6 +393,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -413,6 +419,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN01_PV01_CO_RE_ATM_EQUIP"
         },
         "Surface 7": {
@@ -453,6 +460,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -477,6 +486,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "Surface 9": {
@@ -517,6 +527,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -541,6 +553,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "Surface 11": {
@@ -548,6 +561,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -572,6 +587,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "Surface 12": {
@@ -655,6 +671,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -679,6 +697,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "Surface 15": {
@@ -718,6 +737,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -742,6 +763,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "Surface 17": {
@@ -782,6 +804,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Roof",
             "vertices": [
                 {
@@ -806,6 +830,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "Surface 19": {
@@ -856,6 +881,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -880,6 +907,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 21": {
@@ -953,6 +981,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -977,6 +1007,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 24": {
@@ -984,6 +1015,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -1008,6 +1041,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 25": {
@@ -1048,6 +1082,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Roof",
             "vertices": [
                 {
@@ -1072,6 +1108,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 26A": {
@@ -1079,6 +1116,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Roof",
             "vertices": [
                 {
@@ -1103,6 +1142,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 27": {
@@ -1143,6 +1183,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -1167,6 +1209,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN05_PV02_CO_NO_SERVIDOR"
         },
         "Surface 29": {
@@ -1240,6 +1283,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -1264,6 +1309,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN05_PV02_CO_NO_SERVIDOR"
         },
         "Surface 32": {
@@ -1271,6 +1317,8 @@
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
             "number_of_vertices": "Autocalculate",
+            "outside_boundary_condition": "Outdoors",
+            "sun_exposure": "SunExposed",
             "surface_type": "Roof",
             "vertices": [
                 {
@@ -1295,6 +1343,7 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
+            "wind_exposure": "WindExposed",
             "zone_name": "ZN05_PV02_CO_NO_SERVIDOR"
         },
         "Surface 33": {
@@ -1756,10 +1805,20 @@
             "outside_layer": "200mm lightweight concrete"
         },
         "Exterior Roof": {
-            "idf_max_extensible_fields": 0
+            "idf_max_extensible_fields": 0,
+            "idf_max_fields": 5,
+            "layer_2": "Camara telhado",
+            "layer_3": "vazio",
+            "layer_4": "forro",
+            "outside_layer": "fibrocimento telha"
         },
         "Exterior Wall": {
-            "idf_max_extensible_fields": 0
+            "idf_max_extensible_fields": 0,
+            "idf_max_fields": 5,
+            "layer_2": "argamassa assent",
+            "layer_3": "Concreto parede",
+            "layer_4": "gesso",
+            "outside_layer": "placa granito"
         },
         "Exterior Window": {
             "idf_max_extensible_fields": 0,
@@ -2360,6 +2419,7 @@
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - ATM_CLIENTES",
+            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES"
         },
         "Light 02": {
@@ -2375,6 +2435,7 @@
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
+            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP"
         },
         "Light 03": {
@@ -2390,6 +2451,7 @@
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
+            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "Light 04": {
@@ -2405,6 +2467,7 @@
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
+            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "Light 05": {
@@ -2420,6 +2483,7 @@
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
+            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Light 06": {
@@ -2435,8 +2499,8 @@
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
-            "zone_or_zonelist_name": "ZN05_PV02_CO_NO_SERVIDOR",
-            "watts_per_zone_floor_area": 0
+            "watts_per_zone_floor_area": 0,
+            "zone_or_zonelist_name": "ZN05_PV02_CO_NO_SERVIDOR"
         }
     },
     "Material": {
@@ -4162,6 +4226,7 @@
         "SHGC 01": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 4,
+            "solar_heat_gain_coefficient": 0.3,
             "u_factor": 5.6,
             "visible_transmittance": 0.4
         }
@@ -4475,6 +4540,7 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
+            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
             "maximum_indoor_temperature": 100,
@@ -4482,6 +4548,7 @@
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
+            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -4494,6 +4561,7 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
+            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
             "maximum_indoor_temperature": 100,
@@ -4501,6 +4569,7 @@
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
+            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -4513,6 +4582,7 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
+            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
             "maximum_indoor_temperature": 100,
@@ -4520,6 +4590,7 @@
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
+            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -4532,6 +4603,7 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
+            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
             "maximum_indoor_temperature": 100,
@@ -4539,6 +4611,7 @@
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
+            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -4551,6 +4624,7 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
+            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
             "maximum_indoor_temperature": 100,
@@ -4558,6 +4632,7 @@
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
+            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -4578,7 +4653,7 @@
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
-            "schedule_name": "Always Off",
+            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,

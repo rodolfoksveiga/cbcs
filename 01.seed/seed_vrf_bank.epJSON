@@ -47,7 +47,6 @@
             "heating_performance_curve_outdoor_temperature_type": "WetBulbTemperature",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 81,
-            "idf_order": 288,
             "master_thermostat_priority_control_type": "MasterThermostatPriority",
             "maximum_outdoor_dry_bulb_temperature_for_crankcase_heater": 5,
             "maximum_outdoor_dry_bulb_temperature_for_defrost_operation": 5,
@@ -116,7 +115,6 @@
             "heating_performance_curve_outdoor_temperature_type": "WetBulbTemperature",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 81,
-            "idf_order": 265,
             "master_thermostat_priority_control_type": "MasterThermostatPriority",
             "maximum_outdoor_dry_bulb_temperature_for_crankcase_heater": 5,
             "maximum_outdoor_dry_bulb_temperature_for_defrost_operation": 5,
@@ -185,7 +183,6 @@
             "heating_performance_curve_outdoor_temperature_type": "WetBulbTemperature",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 81,
-            "idf_order": 242,
             "master_thermostat_priority_control_type": "MasterThermostatPriority",
             "maximum_outdoor_dry_bulb_temperature_for_crankcase_heater": 5,
             "maximum_outdoor_dry_bulb_temperature_for_defrost_operation": 5,
@@ -209,14 +206,12 @@
         }
     },
     "Building": {
-        "AgeBan_00": {
+        "AgenciaBancaria": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 8,
-            "idf_order": 3,
             "loads_convergence_tolerance_value": 0.04,
             "maximum_number_of_warmup_days": 25,
             "minimum_number_of_warmup_days": 6,
-            "north_axis": 0,
             "solar_distribution": "FullExterior",
             "temperature_convergence_tolerance_value": 0.4,
             "terrain": "Suburbs"
@@ -227,7 +222,6 @@
             "construction_name": "Exterior Floor",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 67,
             "outside_boundary_condition": "OtherSideConditionsModel",
             "outside_boundary_condition_object": "groundcoulpeOSCM",
             "sun_exposure": "NoSun",
@@ -261,7 +255,6 @@
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 68,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 38",
             "sun_exposure": "NoSun",
@@ -295,7 +288,6 @@
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 69,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 9",
             "sun_exposure": "NoSun",
@@ -329,10 +321,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 89,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -357,14 +346,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN01_PV01_CO_RE_ATM_CLIENTES"
         },
         "Surface 5": {
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 71,
             "outside_boundary_condition": "Outdoors",
             "sun_exposure": "SunExposed",
             "surface_type": "Wall",
@@ -397,10 +384,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 99,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -425,14 +409,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN01_PV01_CO_RE_ATM_EQUIP"
         },
         "Surface 7": {
             "construction_name": "Exterior Floor",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 75,
             "outside_boundary_condition": "OtherSideConditionsModel",
             "outside_boundary_condition_object": "groundcoulpeOSCM",
             "sun_exposure": "NoSun",
@@ -466,10 +448,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 91,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -494,14 +473,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "Surface 9": {
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 76,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 3",
             "sun_exposure": "NoSun",
@@ -535,10 +512,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 97,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -563,17 +537,13 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "Surface 11": {
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 93,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -598,14 +568,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "Surface 12": {
             "construction_name": "Interior Ceiling",
             "idf_max_extensible_fields": 18,
             "idf_max_fields": 28,
-            "idf_order": 72,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 19",
             "sun_exposure": "NoSun",
@@ -649,7 +617,6 @@
             "construction_name": "Interior Floor",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 77,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 35",
             "sun_exposure": "NoSun",
@@ -683,10 +650,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 88,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -711,14 +675,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "Surface 15": {
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 78,
             "outside_boundary_condition": "Outdoors",
             "sun_exposure": "SunExposed",
             "surface_type": "Wall",
@@ -751,10 +713,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 98,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -779,14 +738,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "Surface 17": {
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 79,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 25",
             "sun_exposure": "NoSun",
@@ -820,10 +777,7 @@
             "construction_name": "Exterior Roof",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 103,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Roof",
             "vertices": [
                 {
@@ -848,14 +802,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "Surface 19": {
             "construction_name": "Interior Floor",
             "idf_max_extensible_fields": 18,
             "idf_max_fields": 28,
-            "idf_order": 81,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 12",
             "sun_exposure": "NoSun",
@@ -899,10 +851,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 96,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -927,14 +876,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 21": {
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 82,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 30",
             "sun_exposure": "NoSun",
@@ -968,7 +915,6 @@
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 83,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 29",
             "sun_exposure": "NoSun",
@@ -1002,10 +948,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 92,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -1030,17 +973,13 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 24": {
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 90,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -1065,14 +1004,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 25": {
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 84,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 17",
             "sun_exposure": "NoSun",
@@ -1106,10 +1043,7 @@
             "construction_name": "Exterior Roof",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 101,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Roof",
             "vertices": [
                 {
@@ -1134,17 +1068,13 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 26A": {
             "construction_name": "Exterior Roof",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 102,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Roof",
             "vertices": [
                 {
@@ -1169,14 +1099,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Surface 27": {
             "construction_name": "Interior Floor",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 85,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 33",
             "sun_exposure": "NoSun",
@@ -1210,10 +1138,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 94,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -1238,14 +1163,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN05_PV02_CO_NO_SERVIDOR"
         },
         "Surface 29": {
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 86,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 22",
             "sun_exposure": "NoSun",
@@ -1279,7 +1202,6 @@
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 87,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 21",
             "sun_exposure": "NoSun",
@@ -1313,10 +1235,7 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 95,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Wall",
             "vertices": [
                 {
@@ -1341,17 +1260,13 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN05_PV02_CO_NO_SERVIDOR"
         },
         "Surface 32": {
             "construction_name": "Exterior Roof",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 100,
             "number_of_vertices": "Autocalculate",
-            "outside_boundary_condition": "Outdoors",
-            "sun_exposure": "SunExposed",
             "surface_type": "Roof",
             "vertices": [
                 {
@@ -1376,14 +1291,12 @@
                 }
             ],
             "view_factor_to_ground": "Autocalculate",
-            "wind_exposure": "WindExposed",
             "zone_name": "ZN05_PV02_CO_NO_SERVIDOR"
         },
         "Surface 33": {
             "construction_name": "Interior Ceiling",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 73,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 27",
             "sun_exposure": "NoSun",
@@ -1417,7 +1330,6 @@
             "construction_name": "Exterior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 62,
             "outside_boundary_condition": "Outdoors",
             "sun_exposure": "SunExposed",
             "surface_type": "Wall",
@@ -1450,7 +1362,6 @@
             "construction_name": "Interior Ceiling",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 63,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 13",
             "sun_exposure": "NoSun",
@@ -1484,7 +1395,6 @@
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 64,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 41",
             "sun_exposure": "NoSun",
@@ -1518,7 +1428,6 @@
             "construction_name": "Exterior Floor",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 65,
             "outside_boundary_condition": "OtherSideConditionsModel",
             "outside_boundary_condition_object": "groundcoulpeOSCM",
             "sun_exposure": "NoSun",
@@ -1552,7 +1461,6 @@
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 66,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 2",
             "sun_exposure": "NoSun",
@@ -1586,7 +1494,6 @@
             "construction_name": "Interior Ceiling",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 70,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 40",
             "sun_exposure": "NoSun",
@@ -1620,7 +1527,6 @@
             "construction_name": "Interior Floor",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 80,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 39",
             "sun_exposure": "NoSun",
@@ -1654,7 +1560,6 @@
             "construction_name": "Interior Wall",
             "idf_max_extensible_fields": 12,
             "idf_max_fields": 22,
-            "idf_order": 74,
             "outside_boundary_condition": "Surface",
             "outside_boundary_condition_object": "Surface 36",
             "sun_exposure": "NoSun",
@@ -1696,7 +1601,6 @@
             "gross_rated_total_cooling_capacity": 16000,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 156,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN01_PV01_CO_RE_ATM_EQUIP VRF Cooling Coil": {
@@ -1709,7 +1613,6 @@
             "gross_rated_total_cooling_capacity": 3518,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 172,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN02_PV01_CO_RE_CAIXAS1 VRF Cooling Coil": {
@@ -1722,7 +1625,6 @@
             "gross_rated_total_cooling_capacity": 9000,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 188,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN03_PV02_CO_RE_CAIXAS2 VRF Cooling Coil": {
@@ -1735,7 +1637,6 @@
             "gross_rated_total_cooling_capacity": 28400,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 204,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN04_PV02_CO_RE_ADMIN VRF Cooling Coil": {
@@ -1748,7 +1649,6 @@
             "gross_rated_total_cooling_capacity": 16800,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 220,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN05_PV02_CO_NO_SERVIDOR VRF Cooling Coil": {
@@ -1761,7 +1661,6 @@
             "gross_rated_total_cooling_capacity": 8790,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 236,
             "rated_air_flow_rate": "Autosize"
         }
     },
@@ -1775,7 +1674,6 @@
             "heating_capacity_ratio_modifier_function_of_temperature_curve_name": "ZN01_PV01_CO_RE_ATM_CLIENTES VRF Heating Coil Cap-FT",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 8,
-            "idf_order": 159,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN01_PV01_CO_RE_ATM_EQUIP VRF Heating Coil": {
@@ -1787,7 +1685,6 @@
             "heating_capacity_ratio_modifier_function_of_temperature_curve_name": "ZN01_PV01_CO_RE_ATM_EQUIP VRF Heating Coil Cap-FT",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 8,
-            "idf_order": 175,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN02_PV01_CO_RE_CAIXAS1 VRF Heating Coil": {
@@ -1799,7 +1696,6 @@
             "heating_capacity_ratio_modifier_function_of_temperature_curve_name": "ZN02_PV01_CO_RE_CAIXAS1 VRF Heating Coil Cap-FT",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 8,
-            "idf_order": 191,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN03_PV02_CO_RE_CAIXAS2 VRF Heating Coil": {
@@ -1811,7 +1707,6 @@
             "heating_capacity_ratio_modifier_function_of_temperature_curve_name": "ZN03_PV02_CO_RE_CAIXAS2 VRF Heating Coil Cap-FT",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 8,
-            "idf_order": 207,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN04_PV02_CO_RE_ADMIN VRF Heating Coil": {
@@ -1823,7 +1718,6 @@
             "heating_capacity_ratio_modifier_function_of_temperature_curve_name": "ZN04_PV02_CO_RE_ADMIN VRF Heating Coil Cap-FT",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 8,
-            "idf_order": 223,
             "rated_air_flow_rate": "Autosize"
         },
         "ZN05_PV02_CO_NO_SERVIDOR VRF Heating Coil": {
@@ -1835,7 +1729,6 @@
             "heating_capacity_ratio_modifier_function_of_temperature_curve_name": "ZN05_PV02_CO_NO_SERVIDOR VRF Heating Coil Cap-FT",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 8,
-            "idf_order": 239,
             "rated_air_flow_rate": "Autosize"
         }
     },
@@ -1843,37 +1736,22 @@
         "Exterior Floor": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 49,
             "outside_layer": "200mm lightweight concrete"
         },
         "Exterior Roof": {
-            "idf_max_extensible_fields": 0,
-            "idf_max_fields": 5,
-            "idf_order": 53,
-            "layer_2": "Camara telhado",
-            "layer_3": "vazio",
-            "layer_4": "forro",
-            "outside_layer": "fibrocimento telha"
+            "idf_max_extensible_fields": 0
         },
         "Exterior Wall": {
-            "idf_max_extensible_fields": 0,
-            "idf_max_fields": 5,
-            "idf_order": 54,
-            "layer_2": "argamassa assent",
-            "layer_3": "Concreto parede",
-            "layer_4": "gesso",
-            "outside_layer": "placa granito"
+            "idf_max_extensible_fields": 0
         },
         "Exterior Window": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 48,
             "outside_layer": "SHGC 01"
         },
         "Interior Ceiling": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 4,
-            "idf_order": 51,
             "layer_2": "F04 Wall air space resistance",
             "layer_3": "1IN Stucco",
             "outside_layer": "100mm lightweight concrete"
@@ -1881,7 +1759,6 @@
         "Interior Floor": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 4,
-            "idf_order": 52,
             "layer_2": "F04 Wall air space resistance",
             "layer_3": "1IN Stucco",
             "outside_layer": "100mm lightweight concrete"
@@ -1889,7 +1766,6 @@
         "Interior Wall": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 50,
             "outside_layer": "19mm gypsum board"
         }
     },
@@ -1903,7 +1779,6 @@
             "coefficient6_x_y": -0.0004369,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 310,
             "input_unit_type_for_x": "Distance",
             "input_unit_type_for_y": "Dimensionless",
             "maximum_value_of_x": 175,
@@ -1921,7 +1796,6 @@
             "coefficient6_x_y": -1.1503e-08,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 291,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -1939,7 +1813,6 @@
             "coefficient6_x_y": -0.000339,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 293,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -1957,7 +1830,6 @@
             "coefficient6_x_y": -0.00015686,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 294,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -1975,7 +1847,6 @@
             "coefficient6_x_y": -0.0006177,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 296,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -1993,7 +1864,6 @@
             "coefficient6_x_y": -0.000358147,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 301,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2011,7 +1881,6 @@
             "coefficient6_x_y": -6.8969e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 303,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2029,7 +1898,6 @@
             "coefficient6_x_y": -0.00012766,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 304,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2047,7 +1915,6 @@
             "coefficient6_x_y": 0.00317047,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 306,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2065,7 +1932,6 @@
             "coefficient6_x_y": -0.0004369,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 287,
             "input_unit_type_for_x": "Distance",
             "input_unit_type_for_y": "Dimensionless",
             "maximum_value_of_x": 175,
@@ -2083,7 +1949,6 @@
             "coefficient6_x_y": -1.1503e-08,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 268,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -2101,7 +1966,6 @@
             "coefficient6_x_y": -0.000339,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 270,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -2119,7 +1983,6 @@
             "coefficient6_x_y": -0.00015686,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 271,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -2137,7 +2000,6 @@
             "coefficient6_x_y": -0.0006177,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 273,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -2155,7 +2017,6 @@
             "coefficient6_x_y": -0.000358147,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 278,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2173,7 +2034,6 @@
             "coefficient6_x_y": -6.8969e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 280,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2191,7 +2051,6 @@
             "coefficient6_x_y": -0.00012766,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 281,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2209,7 +2068,6 @@
             "coefficient6_x_y": 0.00317047,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 283,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2227,7 +2085,6 @@
             "coefficient6_x_y": -0.0004369,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 264,
             "input_unit_type_for_x": "Distance",
             "input_unit_type_for_y": "Dimensionless",
             "maximum_value_of_x": 175,
@@ -2245,7 +2102,6 @@
             "coefficient6_x_y": -1.1503e-08,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 245,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -2263,7 +2119,6 @@
             "coefficient6_x_y": -0.000339,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 247,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -2281,7 +2136,6 @@
             "coefficient6_x_y": -0.00015686,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 248,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -2299,7 +2153,6 @@
             "coefficient6_x_y": -0.0006177,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 250,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 24,
@@ -2317,7 +2170,6 @@
             "coefficient6_x_y": -0.000358147,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 255,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2335,7 +2187,6 @@
             "coefficient6_x_y": -6.8969e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 257,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2353,7 +2204,6 @@
             "coefficient6_x_y": -0.00012766,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 258,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2371,7 +2221,6 @@
             "coefficient6_x_y": 0.00317047,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 260,
             "input_unit_type_for_x": "Temperature",
             "input_unit_type_for_y": "Temperature",
             "maximum_value_of_x": 27,
@@ -2389,7 +2238,6 @@
             "coefficient4_x_3": -0.5974817,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 297,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 1,
             "minimum_value_of_x": 0,
@@ -2402,7 +2250,6 @@
             "coefficient4_x_3": 0.0845859,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 307,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1,
             "minimum_value_of_x": 0,
@@ -2415,7 +2262,6 @@
             "coefficient4_x_3": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 292,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 30,
             "minimum_value_of_x": 11,
@@ -2428,7 +2274,6 @@
             "coefficient4_x_3": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 295,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 24,
             "minimum_value_of_x": 15,
@@ -2441,7 +2286,6 @@
             "coefficient4_x_3": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 302,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 27,
             "minimum_value_of_x": 15,
@@ -2454,7 +2298,6 @@
             "coefficient4_x_3": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 305,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 15,
             "maximum_value_of_x": 27,
@@ -2469,7 +2312,6 @@
             "coefficient4_x_3": -0.5974817,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 274,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 1,
             "minimum_value_of_x": 0,
@@ -2482,7 +2324,6 @@
             "coefficient4_x_3": 0.0845859,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 284,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1,
             "minimum_value_of_x": 0,
@@ -2495,7 +2336,6 @@
             "coefficient4_x_3": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 269,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 30,
             "minimum_value_of_x": 11,
@@ -2508,7 +2348,6 @@
             "coefficient4_x_3": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 272,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 24,
             "minimum_value_of_x": 15,
@@ -2521,7 +2360,6 @@
             "coefficient4_x_3": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 279,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 27,
             "minimum_value_of_x": 15,
@@ -2534,7 +2372,6 @@
             "coefficient4_x_3": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 282,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 15,
             "maximum_value_of_x": 27,
@@ -2549,7 +2386,6 @@
             "coefficient4_x_3": -0.5974817,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 251,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 1,
             "minimum_value_of_x": 0,
@@ -2562,7 +2398,6 @@
             "coefficient4_x_3": 0.0845859,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 261,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1,
             "minimum_value_of_x": 0,
@@ -2575,7 +2410,6 @@
             "coefficient4_x_3": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 246,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 30,
             "minimum_value_of_x": 11,
@@ -2588,7 +2422,6 @@
             "coefficient4_x_3": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 249,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 24,
             "minimum_value_of_x": 15,
@@ -2601,7 +2434,6 @@
             "coefficient4_x_3": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 256,
             "input_unit_type_for_x": "Temperature",
             "maximum_value_of_x": 27,
             "minimum_value_of_x": 15,
@@ -2614,7 +2446,6 @@
             "coefficient4_x_3": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 259,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 15,
             "maximum_value_of_x": 27,
@@ -2629,7 +2460,6 @@
             "coefficient4_x_3": 1.01359395177008e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 157,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2644,7 +2474,6 @@
             "coefficient4_x_3": 0.000178131745997821,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 160,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2659,7 +2488,6 @@
             "coefficient4_x_3": 1.01359395177008e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 173,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2674,7 +2502,6 @@
             "coefficient4_x_3": 0.000178131745997821,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 176,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2689,7 +2516,6 @@
             "coefficient4_x_3": 1.01359395177008e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 189,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2704,7 +2530,6 @@
             "coefficient4_x_3": 0.000178131745997821,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 192,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2719,7 +2544,6 @@
             "coefficient4_x_3": 1.01359395177008e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 205,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2734,7 +2558,6 @@
             "coefficient4_x_3": 0.000178131745997821,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 208,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2749,7 +2572,6 @@
             "coefficient4_x_3": 1.01359395177008e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 221,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2764,7 +2586,6 @@
             "coefficient4_x_3": 0.000178131745997821,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 224,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2779,7 +2600,6 @@
             "coefficient4_x_3": 1.01359395177008e-05,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 237,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2794,7 +2614,6 @@
             "coefficient4_x_3": 0.000178131745997821,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 240,
             "input_unit_type_for_x": "Temperature",
             "maximum_curve_output": 1.5,
             "maximum_value_of_x": 50.0,
@@ -2809,7 +2628,6 @@
             "coefficient2_x": 0.381945,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 299,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.2,
             "maximum_value_of_x": 1.5,
@@ -2822,7 +2640,6 @@
             "coefficient2_x": 0.03966,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 309,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.023,
             "maximum_value_of_x": 1.5,
@@ -2835,7 +2652,6 @@
             "coefficient2_x": 0.381945,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 276,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.2,
             "maximum_value_of_x": 1.5,
@@ -2848,7 +2664,6 @@
             "coefficient2_x": 0.03966,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 286,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.023,
             "maximum_value_of_x": 1.5,
@@ -2861,7 +2676,6 @@
             "coefficient2_x": 0.381945,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 253,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.2,
             "maximum_value_of_x": 1.5,
@@ -2874,7 +2688,6 @@
             "coefficient2_x": 0.03966,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 263,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.023,
             "maximum_value_of_x": 1.5,
@@ -2890,7 +2703,6 @@
             "coefficient3_x_2": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 298,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 1.0,
@@ -2902,7 +2714,6 @@
             "coefficient3_x_2": 0.8064516,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 308,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 1.0,
@@ -2914,7 +2725,6 @@
             "coefficient3_x_2": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 300,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.0,
             "maximum_value_of_x": 1.0,
@@ -2928,7 +2738,6 @@
             "coefficient3_x_2": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 275,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 1.0,
@@ -2940,7 +2749,6 @@
             "coefficient3_x_2": 0.8064516,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 285,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 1.0,
@@ -2952,7 +2760,6 @@
             "coefficient3_x_2": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 277,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.0,
             "maximum_value_of_x": 1.0,
@@ -2966,7 +2773,6 @@
             "coefficient3_x_2": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 252,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 1.0,
@@ -2978,7 +2784,6 @@
             "coefficient3_x_2": 0.8064516,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 262,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 1.0,
@@ -2990,7 +2795,6 @@
             "coefficient3_x_2": 0.0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 10,
-            "idf_order": 254,
             "input_unit_type_for_x": "Dimensionless",
             "maximum_curve_output": 1.0,
             "maximum_value_of_x": 1.0,
@@ -3004,7 +2808,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 158,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3014,7 +2817,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 161,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3024,7 +2826,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 174,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3034,7 +2835,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 177,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3044,7 +2844,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 190,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3054,7 +2853,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 193,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3064,7 +2862,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 206,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3074,7 +2871,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 209,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3084,7 +2880,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 222,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3094,7 +2889,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 225,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3104,7 +2898,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 238,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         },
@@ -3114,7 +2907,6 @@
             "coefficient3_x_2": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 241,
             "maximum_value_of_x": 1.5,
             "minimum_value_of_x": 0.5
         }
@@ -3123,7 +2915,6 @@
         "SZ DSOA ZN01_PV01_CO_RE_ATM_CLIENTES": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 147,
             "outdoor_air_flow_per_person": 0,
             "outdoor_air_flow_per_zone": 0,
             "outdoor_air_flow_per_zone_floor_area": 0,
@@ -3132,7 +2923,6 @@
         "SZ DSOA ZN01_PV01_CO_RE_ATM_EQUIP": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 163,
             "outdoor_air_flow_per_person": 0,
             "outdoor_air_flow_per_zone": 0,
             "outdoor_air_flow_per_zone_floor_area": 0,
@@ -3141,7 +2931,6 @@
         "SZ DSOA ZN02_PV01_CO_RE_CAIXAS1": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 179,
             "outdoor_air_flow_per_person": 0,
             "outdoor_air_flow_per_zone": 0,
             "outdoor_air_flow_per_zone_floor_area": 0,
@@ -3150,7 +2939,6 @@
         "SZ DSOA ZN03_PV02_CO_RE_CAIXAS2": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 195,
             "outdoor_air_flow_per_person": 0,
             "outdoor_air_flow_per_zone": 0,
             "outdoor_air_flow_per_zone_floor_area": 0,
@@ -3159,7 +2947,6 @@
         "SZ DSOA ZN04_PV02_CO_RE_ADMIN": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 211,
             "outdoor_air_flow_per_person": 0,
             "outdoor_air_flow_per_zone": 0,
             "outdoor_air_flow_per_zone_floor_area": 0,
@@ -3168,7 +2955,6 @@
         "SZ DSOA ZN05_PV02_CO_NO_SERVIDOR": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 227,
             "outdoor_air_flow_per_person": 0,
             "outdoor_air_flow_per_zone": 0,
             "outdoor_air_flow_per_zone_floor_area": 0,
@@ -3179,42 +2965,36 @@
         "SZ DSZAD ZN01_PV01_CO_RE_ATM_CLIENTES": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 149,
             "zone_air_distribution_effectiveness_in_cooling_mode": 1,
             "zone_air_distribution_effectiveness_in_heating_mode": 1
         },
         "SZ DSZAD ZN01_PV01_CO_RE_ATM_EQUIP": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 165,
             "zone_air_distribution_effectiveness_in_cooling_mode": 1,
             "zone_air_distribution_effectiveness_in_heating_mode": 1
         },
         "SZ DSZAD ZN02_PV01_CO_RE_CAIXAS1": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 181,
             "zone_air_distribution_effectiveness_in_cooling_mode": 1,
             "zone_air_distribution_effectiveness_in_heating_mode": 1
         },
         "SZ DSZAD ZN03_PV02_CO_RE_CAIXAS2": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 197,
             "zone_air_distribution_effectiveness_in_cooling_mode": 1,
             "zone_air_distribution_effectiveness_in_heating_mode": 1
         },
         "SZ DSZAD ZN04_PV02_CO_RE_ADMIN": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 213,
             "zone_air_distribution_effectiveness_in_cooling_mode": 1,
             "zone_air_distribution_effectiveness_in_heating_mode": 1
         },
         "SZ DSZAD ZN05_PV02_CO_NO_SERVIDOR": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 229,
             "zone_air_distribution_effectiveness_in_cooling_mode": 1,
             "zone_air_distribution_effectiveness_in_heating_mode": 1
         }
@@ -3227,7 +3007,6 @@
             "fraction_radiant": 0.2,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 117,
             "schedule_name": "EQUIP - ATM_CLIENTES",
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES"
         },
@@ -3238,7 +3017,6 @@
             "fraction_radiant": 0.2,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 118,
             "schedule_name": "ATM_EQ",
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP"
         },
@@ -3249,7 +3027,6 @@
             "fraction_radiant": 0.2,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 119,
             "schedule_name": "EQ-Caixas e ADM",
             "zone_or_zonelist_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
@@ -3260,7 +3037,6 @@
             "fraction_radiant": 0.2,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 120,
             "schedule_name": "EQ-Caixas e ADM",
             "zone_or_zonelist_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
@@ -3271,7 +3047,6 @@
             "fraction_radiant": 0.2,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 121,
             "schedule_name": "EQ-Caixas e ADM",
             "zone_or_zonelist_name": "ZN04_PV02_CO_RE_ADMIN"
         },
@@ -3281,7 +3056,6 @@
             "fraction_radiant": 0.2,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 11,
-            "idf_order": 122,
             "schedule_name": "EQ - Servidor",
             "watts_per_zone_floor_area": 756,
             "zone_or_zonelist_name": "ZN05_PV02_CO_NO_SERVIDOR"
@@ -3294,7 +3068,6 @@
             "end_use_subcategory": "Ilu Externa",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 129,
             "schedule_name": "Always On"
         }
     },
@@ -3306,7 +3079,6 @@
             "fan_total_efficiency": 0.208333,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 153,
             "maximum_flow_rate": "Autosize",
             "motor_efficiency": 0.9,
             "motor_in_airstream_fraction": 1,
@@ -3319,7 +3091,6 @@
             "fan_total_efficiency": 0.16156,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 169,
             "maximum_flow_rate": "Autosize",
             "motor_efficiency": 0.9,
             "motor_in_airstream_fraction": 1,
@@ -3332,7 +3103,6 @@
             "fan_total_efficiency": 0.5,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 185,
             "maximum_flow_rate": "Autosize",
             "motor_efficiency": 0.9,
             "motor_in_airstream_fraction": 1,
@@ -3345,7 +3115,6 @@
             "fan_total_efficiency": 0.31667,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 201,
             "maximum_flow_rate": "Autosize",
             "motor_efficiency": 0.9,
             "motor_in_airstream_fraction": 1,
@@ -3358,7 +3127,6 @@
             "fan_total_efficiency": 0.09115,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 217,
             "maximum_flow_rate": "Autosize",
             "motor_efficiency": 0.9,
             "motor_in_airstream_fraction": 1,
@@ -3371,7 +3139,6 @@
             "fan_total_efficiency": 0.10657,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 233,
             "maximum_flow_rate": "Autosize",
             "motor_efficiency": 0.9,
             "motor_in_airstream_fraction": 1,
@@ -3384,7 +3151,6 @@
             "construction_name": "Exterior Window",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 21,
-            "idf_order": 104,
             "surface_type": "Window",
             "vertex_1_x_coordinate": 2.01,
             "vertex_1_y_coordinate": 0,
@@ -3404,7 +3170,6 @@
             "construction_name": "Exterior Window",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 21,
-            "idf_order": 105,
             "surface_type": "Window",
             "vertex_1_x_coordinate": -14.99,
             "vertex_1_y_coordinate": -10,
@@ -3426,7 +3191,6 @@
             "daylighting_reference_point_coordinate_system": "Relative",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 55,
             "rectangular_surface_coordinate_system": "Relative",
             "starting_vertex_position": "UpperLeftCorner",
             "vertex_entry_direction": "Counterclockwise"
@@ -3441,13 +3205,11 @@
             "fraction_visible": 0.18,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 15,
-            "idf_order": 111,
             "return_air_fraction": 0,
             "return_air_fraction_calculated_from_plenum_temperature": "No",
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - ATM_CLIENTES",
-            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES"
         },
         "Light 02": {
@@ -3458,13 +3220,11 @@
             "fraction_visible": 0.18,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 15,
-            "idf_order": 112,
             "return_air_fraction": 0,
             "return_air_fraction_calculated_from_plenum_temperature": "No",
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
-            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP"
         },
         "Light 03": {
@@ -3475,13 +3235,11 @@
             "fraction_visible": 0.18,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 15,
-            "idf_order": 113,
             "return_air_fraction": 0,
             "return_air_fraction_calculated_from_plenum_temperature": "No",
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
-            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "Light 04": {
@@ -3492,13 +3250,11 @@
             "fraction_visible": 0.18,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 15,
-            "idf_order": 114,
             "return_air_fraction": 0,
             "return_air_fraction_calculated_from_plenum_temperature": "No",
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
-            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "Light 05": {
@@ -3509,13 +3265,11 @@
             "fraction_visible": 0.18,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 15,
-            "idf_order": 115,
             "return_air_fraction": 0,
             "return_air_fraction_calculated_from_plenum_temperature": "No",
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
-            "watts_per_zone_floor_area": 10,
             "zone_or_zonelist_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "Light 06": {
@@ -3526,14 +3280,13 @@
             "fraction_visible": 0.18,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 15,
-            "idf_order": 116,
             "return_air_fraction": 0,
             "return_air_fraction_calculated_from_plenum_temperature": "No",
             "return_air_fraction_function_of_plenum_temperature_coefficient_1": 0,
             "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
             "schedule_name": "ILU - Caixas e ADM",
-            "watts_per_zone_floor_area": 0,
-            "zone_or_zonelist_name": "ZN05_PV02_CO_NO_SERVIDOR"
+            "zone_or_zonelist_name": "ZN05_PV02_CO_NO_SERVIDOR",
+            "watts_per_zone_floor_area": 0
         }
     },
     "Material": {
@@ -3542,7 +3295,6 @@
             "density": 1858,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 26,
             "roughness": "Smooth",
             "solar_absorptance": 0.92,
             "specific_heat": 836.999999999999,
@@ -3555,7 +3307,6 @@
             "density": 800,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 27,
             "roughness": "MediumSmooth",
             "solar_absorptance": 0.4,
             "specific_heat": 1090,
@@ -3568,7 +3319,6 @@
             "density": 1280,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 28,
             "roughness": "MediumRough",
             "solar_absorptance": 0.5,
             "specific_heat": 840.000000000002,
@@ -3581,7 +3331,6 @@
             "density": 1280,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 29,
             "roughness": "MediumRough",
             "solar_absorptance": 0.5,
             "specific_heat": 840.000000000002,
@@ -3594,7 +3343,6 @@
             "density": 2200,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 35,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 1000,
@@ -3607,7 +3355,6 @@
             "density": 401,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 32,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 1000,
@@ -3620,7 +3367,6 @@
             "density": 2000,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 40,
             "roughness": "Rough",
             "solar_absorptance": 0.3,
             "specific_heat": 1000,
@@ -3633,7 +3379,6 @@
             "density": 2000,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 34,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 1000,
@@ -3646,7 +3391,6 @@
             "density": 1900,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 33,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 840,
@@ -3659,7 +3403,6 @@
             "density": 1900,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 38,
             "roughness": "Rough",
             "solar_absorptance": 0.3,
             "specific_heat": 840,
@@ -3672,7 +3415,6 @@
             "density": 900,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 37,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 870,
@@ -3685,7 +3427,6 @@
             "density": 900,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 39,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 870,
@@ -3698,7 +3439,6 @@
             "density": 2200,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 31,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 1000,
@@ -3711,7 +3451,6 @@
             "density": 2300,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 36,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 840,
@@ -3724,7 +3463,6 @@
             "density": 1600,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 9,
-            "idf_order": 30,
             "roughness": "Rough",
             "solar_absorptance": 0.7,
             "specific_heat": 920,
@@ -3737,31 +3475,26 @@
         "Camara parede": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 44,
             "thermal_resistance": 0.163
         },
         "Camara telhado": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 45,
             "thermal_resistance": 0.275
         },
         "F04 Wall air space resistance": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 42,
             "thermal_resistance": 0.15
         },
         "F05 Ceiling air space resistance": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 43,
             "thermal_resistance": 0.18
         },
         "vazio": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 46,
             "thermal_resistance": 0.001
         }
     },
@@ -3769,7 +3502,6 @@
         "CP02 CARPET PAD": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 41,
             "roughness": "Smooth",
             "solar_absorptance": 0.8,
             "thermal_absorptance": 0.9,
@@ -3781,7 +3513,6 @@
         "ZN01_PV01_CO_RE_ATM_CLIENTES VRF OA Mixing Box": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 154,
             "mixed_air_node_name": "ZN01_PV01_CO_RE_ATM_CLIENTES VRF Mixed Air Outlet",
             "outdoor_air_stream_node_name": "ZN01_PV01_CO_RE_ATM_CLIENTES VRF Outdoor Air Inlet",
             "relief_air_stream_node_name": "ZN01_PV01_CO_RE_ATM_CLIENTES VRF Relief Air Outlet",
@@ -3790,7 +3521,6 @@
         "ZN01_PV01_CO_RE_ATM_EQUIP VRF OA Mixing Box": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 170,
             "mixed_air_node_name": "ZN01_PV01_CO_RE_ATM_EQUIP VRF Mixed Air Outlet",
             "outdoor_air_stream_node_name": "ZN01_PV01_CO_RE_ATM_EQUIP VRF Outdoor Air Inlet",
             "relief_air_stream_node_name": "ZN01_PV01_CO_RE_ATM_EQUIP VRF Relief Air Outlet",
@@ -3799,7 +3529,6 @@
         "ZN02_PV01_CO_RE_CAIXAS1 VRF OA Mixing Box": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 186,
             "mixed_air_node_name": "ZN02_PV01_CO_RE_CAIXAS1 VRF Mixed Air Outlet",
             "outdoor_air_stream_node_name": "ZN02_PV01_CO_RE_CAIXAS1 VRF Outdoor Air Inlet",
             "relief_air_stream_node_name": "ZN02_PV01_CO_RE_CAIXAS1 VRF Relief Air Outlet",
@@ -3808,7 +3537,6 @@
         "ZN03_PV02_CO_RE_CAIXAS2 VRF OA Mixing Box": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 202,
             "mixed_air_node_name": "ZN03_PV02_CO_RE_CAIXAS2 VRF Mixed Air Outlet",
             "outdoor_air_stream_node_name": "ZN03_PV02_CO_RE_CAIXAS2 VRF Outdoor Air Inlet",
             "relief_air_stream_node_name": "ZN03_PV02_CO_RE_CAIXAS2 VRF Relief Air Outlet",
@@ -3817,7 +3545,6 @@
         "ZN04_PV02_CO_RE_ADMIN VRF OA Mixing Box": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 218,
             "mixed_air_node_name": "ZN04_PV02_CO_RE_ADMIN VRF Mixed Air Outlet",
             "outdoor_air_stream_node_name": "ZN04_PV02_CO_RE_ADMIN VRF Outdoor Air Inlet",
             "relief_air_stream_node_name": "ZN04_PV02_CO_RE_ADMIN VRF Relief Air Outlet",
@@ -3826,7 +3553,6 @@
         "ZN05_PV02_CO_NO_SERVIDOR VRF OA Mixing Box": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 234,
             "mixed_air_node_name": "ZN05_PV02_CO_NO_SERVIDOR VRF Mixed Air Outlet",
             "outdoor_air_stream_node_name": "ZN05_PV02_CO_NO_SERVIDOR VRF Outdoor Air Inlet",
             "relief_air_stream_node_name": "ZN05_PV02_CO_NO_SERVIDOR VRF Relief Air Outlet",
@@ -3837,56 +3563,47 @@
         "Inv_ATMequip Condenser Inlet Node": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 290
+            "idf_max_fields": 2
         },
         "Inv_AgBanc_Serv Condenser Inlet Node": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 267
+            "idf_max_fields": 2
         },
         "VRF_AgBanc Condenser Inlet Node": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 244
+            "idf_max_fields": 2
         },
         "ZN01_PV01_CO_RE_ATM_CLIENTES VRF Outdoor Air Inlet": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 155
+            "idf_max_fields": 2
         },
         "ZN01_PV01_CO_RE_ATM_EQUIP VRF Outdoor Air Inlet": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 171
+            "idf_max_fields": 2
         },
         "ZN02_PV01_CO_RE_CAIXAS1 VRF Outdoor Air Inlet": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 187
+            "idf_max_fields": 2
         },
         "ZN03_PV02_CO_RE_CAIXAS2 VRF Outdoor Air Inlet": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 203
+            "idf_max_fields": 2
         },
         "ZN04_PV02_CO_RE_ADMIN VRF Outdoor Air Inlet": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 219
+            "idf_max_fields": 2
         },
         "ZN05_PV02_CO_NO_SERVIDOR VRF Outdoor Air Inlet": {
             "height_above_ground": -1,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 235
+            "idf_max_fields": 2
         }
     },
     "Output:Constructions": {
@@ -3894,15 +3611,13 @@
             "details_type_1": "Constructions",
             "details_type_2": "Materials",
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 132
+            "idf_max_fields": 2
         }
     },
     "Output:Diagnostics": {
         "Output:Diagnostics 1": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 140,
             "key_1": "DisplayAllWarnings",
             "key_2": "DisplayExtraWarnings"
         }
@@ -3911,7 +3626,6 @@
         "Output:Table:SummaryReports 1": {
             "idf_max_extensible_fields": 1,
             "idf_max_fields": 1,
-            "idf_order": 133,
             "reports": [
                 {
                     "report_name": "AllSummary"
@@ -3923,7 +3637,6 @@
         "Output:Variable 1": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 135,
             "key_value": "*",
             "reporting_frequency": "Annual",
             "variable_name": "Fan Electric Energy"
@@ -3931,7 +3644,6 @@
         "Output:Variable 2": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 136,
             "key_value": "*",
             "reporting_frequency": "Annual",
             "variable_name": "VRF Heat Pump Cooling Electric Energy"
@@ -3939,7 +3651,6 @@
         "Output:Variable 3": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 137,
             "key_value": "*",
             "reporting_frequency": "Annual",
             "variable_name": "VRF Heat Pump Heating Electric Energy"
@@ -3947,7 +3658,6 @@
         "Output:Variable 4": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 138,
             "key_value": "*",
             "reporting_frequency": "Annual",
             "variable_name": "VRF Heat Pump Crankcase Heater Electric Energy"
@@ -3955,7 +3665,6 @@
         "Output:Variable 5": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 3,
-            "idf_order": 139,
             "key_value": "*",
             "reporting_frequency": "Annual",
             "variable_name": "VRF Heat Pump Defrost Electric Energy"
@@ -3965,7 +3674,6 @@
         "Output:VariableDictionary 1": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 131,
             "key_field": "IDF",
             "sort_option": "Name"
         }
@@ -3975,7 +3683,6 @@
             "column_separator": "HTML",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 134,
             "unit_conversion": "JtoKWH"
         }
     },
@@ -3988,7 +3695,6 @@
             "fraction_radiant": 0.3,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 109,
             "mean_radiant_temperature_calculation_type": "ZoneAveraged",
             "number_of_people": 6,
             "number_of_people_calculation_method": "People",
@@ -4004,7 +3710,6 @@
             "fraction_radiant": 0.3,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 110,
             "mean_radiant_temperature_calculation_type": "ZoneAveraged",
             "number_of_people": 30,
             "number_of_people_calculation_method": "People",
@@ -4020,7 +3725,6 @@
             "fraction_radiant": 0.3,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 107,
             "mean_radiant_temperature_calculation_type": "ZoneAveraged",
             "number_of_people": 18,
             "number_of_people_calculation_method": "People",
@@ -4036,7 +3740,6 @@
             "fraction_radiant": 0.3,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 16,
-            "idf_order": 108,
             "mean_radiant_temperature_calculation_type": "ZoneAveraged",
             "number_of_people": 18,
             "number_of_people_calculation_method": "People",
@@ -4057,7 +3760,6 @@
             "end_year": 2009,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 13,
-            "idf_order": 7,
             "use_weather_file_daylight_saving_period": "No",
             "use_weather_file_holidays_and_special_days": "No",
             "use_weather_file_rain_indicators": "Yes",
@@ -4220,7 +3922,6 @@
             ],
             "idf_max_extensible_fields": 50,
             "idf_max_fields": 52,
-            "idf_order": 16,
             "schedule_type_limits_name": "Fraction"
         },
         "Activity Schedule": {
@@ -4240,7 +3941,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 13,
             "schedule_type_limits_name": "Any Number"
         },
         "Always Off": {
@@ -4260,7 +3960,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 14,
             "schedule_type_limits_name": "Fraction"
         },
         "Always On": {
@@ -4280,7 +3979,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 15,
             "schedule_type_limits_name": "Fraction"
         },
         "EQ - Servidor": {
@@ -4342,7 +4040,6 @@
             ],
             "idf_max_extensible_fields": 18,
             "idf_max_fields": 20,
-            "idf_order": 17,
             "schedule_type_limits_name": "On/Off"
         },
         "EQ-Caixas e ADM": {
@@ -4401,7 +4098,6 @@
             ],
             "idf_max_extensible_fields": 17,
             "idf_max_fields": 19,
-            "idf_order": 18,
             "schedule_type_limits_name": "Fraction"
         },
         "EQUIP - ATM_CLIENTES": {
@@ -4460,7 +4156,6 @@
             ],
             "idf_max_extensible_fields": 17,
             "idf_max_fields": 19,
-            "idf_order": 25,
             "schedule_type_limits_name": "Fraction"
         },
         "HVAC": {
@@ -4501,7 +4196,6 @@
             ],
             "idf_max_extensible_fields": 11,
             "idf_max_fields": 13,
-            "idf_order": 19,
             "schedule_type_limits_name": "On/Off"
         },
         "HVACTemplate-Always 4": {
@@ -4521,7 +4215,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 145,
             "schedule_type_limits_name": "HVACTemplate Any Number"
         },
         "HVACTemplate-Always 21": {
@@ -4541,7 +4234,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 142,
             "schedule_type_limits_name": "HVACTemplate Any Number"
         },
         "HVACTemplate-Always 24": {
@@ -4561,7 +4253,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 143,
             "schedule_type_limits_name": "HVACTemplate Any Number"
         },
         "ILU - ATM_CLIENTES": {
@@ -4599,7 +4290,6 @@
             ],
             "idf_max_extensible_fields": 10,
             "idf_max_fields": 12,
-            "idf_order": 24,
             "schedule_type_limits_name": "Fraction"
         },
         "ILU - Caixas e ADM": {
@@ -4658,7 +4348,6 @@
             ],
             "idf_max_extensible_fields": 17,
             "idf_max_fields": 19,
-            "idf_order": 20,
             "schedule_type_limits_name": "Fraction"
         },
         "OCU - ADM": {
@@ -4753,7 +4442,6 @@
             ],
             "idf_max_extensible_fields": 29,
             "idf_max_fields": 31,
-            "idf_order": 21,
             "schedule_type_limits_name": "Fraction"
         },
         "OCU - ATM": {
@@ -4911,7 +4599,6 @@
             ],
             "idf_max_extensible_fields": 50,
             "idf_max_fields": 52,
-            "idf_order": 22,
             "schedule_type_limits_name": "Fraction"
         },
         "OCU - Caixas": {
@@ -5006,33 +4693,28 @@
             ],
             "idf_max_extensible_fields": 29,
             "idf_max_fields": 31,
-            "idf_order": 23,
             "schedule_type_limits_name": "Fraction"
         }
     },
     "ScheduleTypeLimits": {
         "Any Number": {
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 1,
-            "idf_order": 10
+            "idf_max_fields": 1
         },
         "Fraction": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 4,
-            "idf_order": 11,
             "lower_limit_value": 0.0,
             "numeric_type": "Continuous",
             "upper_limit_value": 1.0
         },
         "HVACTemplate Any Number": {
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 1,
-            "idf_order": 141
+            "idf_max_fields": 1
         },
         "On/Off": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 4,
-            "idf_order": 12,
             "lower_limit_value": 0,
             "numeric_type": "Discrete",
             "upper_limit_value": 1
@@ -5045,7 +4727,6 @@
             "do_zone_sizing_calculation": "Yes",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 2,
             "run_simulation_for_sizing_periods": "No",
             "run_simulation_for_weather_file_run_periods": "Yes"
         }
@@ -5060,7 +4741,6 @@
             "horizontal_insulation_extents": "Full",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 25,
-            "idf_order": 9,
             "mesh_density_parameter": 6,
             "perimeter_offset": 5,
             "simulation_timestep": "Hourly",
@@ -5081,7 +4761,6 @@
             "evapotranspiration_ground_cover_parameter": 0.4,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 7,
-            "idf_order": 8,
             "soil_density": 2800,
             "soil_moisture_content_volume_fraction": 30,
             "soil_moisture_content_volume_fraction_at_saturation": 50,
@@ -5094,8 +4773,7 @@
             "cooling_sizing_factor": 1.15,
             "heating_sizing_factor": 1.25,
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 2,
-            "idf_order": 130
+            "idf_max_fields": 2
         }
     },
     "Sizing:Zone": {
@@ -5110,7 +4788,6 @@
             "heating_maximum_air_flow_fraction": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 148,
             "zone_cooling_design_supply_air_humidity_ratio": 0.008,
             "zone_cooling_design_supply_air_temperature": 14,
             "zone_cooling_design_supply_air_temperature_difference": 11.11,
@@ -5132,7 +4809,6 @@
             "heating_maximum_air_flow_fraction": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 164,
             "zone_cooling_design_supply_air_humidity_ratio": 0.008,
             "zone_cooling_design_supply_air_temperature": 14,
             "zone_cooling_design_supply_air_temperature_difference": 11.11,
@@ -5154,7 +4830,6 @@
             "heating_maximum_air_flow_fraction": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 180,
             "zone_cooling_design_supply_air_humidity_ratio": 0.008,
             "zone_cooling_design_supply_air_temperature": 14,
             "zone_cooling_design_supply_air_temperature_difference": 11.11,
@@ -5176,7 +4851,6 @@
             "heating_maximum_air_flow_fraction": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 196,
             "zone_cooling_design_supply_air_humidity_ratio": 0.008,
             "zone_cooling_design_supply_air_temperature": 14,
             "zone_cooling_design_supply_air_temperature_difference": 11.11,
@@ -5198,7 +4872,6 @@
             "heating_maximum_air_flow_fraction": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 212,
             "zone_cooling_design_supply_air_humidity_ratio": 0.008,
             "zone_cooling_design_supply_air_temperature": 14,
             "zone_cooling_design_supply_air_temperature_difference": 11.11,
@@ -5220,7 +4893,6 @@
             "heating_maximum_air_flow_fraction": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 228,
             "zone_cooling_design_supply_air_humidity_ratio": 0.008,
             "zone_cooling_design_supply_air_temperature": 14,
             "zone_cooling_design_supply_air_temperature_difference": 11.11,
@@ -5245,7 +4917,6 @@
             "humidity_condition_type": "WetBulb",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 25,
-            "idf_order": 6,
             "maximum_dry_bulb_temperature": 32.2,
             "month": 2,
             "rain_indicator": "No",
@@ -5265,7 +4936,6 @@
             "humidity_condition_type": "WetBulb",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
-            "idf_order": 5,
             "maximum_dry_bulb_temperature": 9,
             "month": 7,
             "rain_indicator": "No",
@@ -5281,7 +4951,6 @@
         "groundcoulpeOSCM": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 2,
-            "idf_order": 106,
             "type_of_modeling": "GroundCoupledSurface"
         }
     },
@@ -5290,15 +4959,13 @@
             "cooling_setpoint_temperature_schedule_name": "HVACTemplate-Always 24",
             "heating_setpoint_temperature_schedule_name": "HVACTemplate-Always 21",
             "idf_max_extensible_fields": 0,
-            "idf_max_fields": 3,
-            "idf_order": 144
+            "idf_max_fields": 3
         }
     },
     "Timestep": {
         "Timestep 1": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 1,
-            "idf_order": 4,
             "number_of_timesteps_per_hour": 6
         }
     },
@@ -5306,7 +4973,6 @@
         "Version 1": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 1,
-            "idf_order": 1,
             "version_identifier": "9.2"
         }
     },
@@ -5314,8 +4980,6 @@
         "SHGC 01": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 4,
-            "idf_order": 47,
-            "solar_heat_gain_coefficient": 0.3,
             "u_factor": 5.6,
             "visible_transmittance": 0.4
         }
@@ -5325,7 +4989,6 @@
             "direction_of_relative_north": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 7,
-            "idf_order": 56,
             "multiplier": 1,
             "x_origin": 0,
             "y_origin": 0,
@@ -5335,7 +4998,6 @@
             "direction_of_relative_north": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 57,
             "x_origin": 2,
             "y_origin": 0,
             "z_origin": 0
@@ -5344,7 +5006,6 @@
             "direction_of_relative_north": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 58,
             "x_origin": 15,
             "y_origin": 20,
             "z_origin": 0
@@ -5353,7 +5014,6 @@
             "direction_of_relative_north": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 7,
-            "idf_order": 59,
             "multiplier": 1,
             "x_origin": 15,
             "y_origin": 10,
@@ -5363,7 +5023,6 @@
             "direction_of_relative_north": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 7,
-            "idf_order": 60,
             "multiplier": 1,
             "x_origin": 0,
             "y_origin": 10,
@@ -5373,7 +5032,6 @@
             "direction_of_relative_north": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 7,
-            "idf_order": 61,
             "multiplier": 1,
             "x_origin": 0,
             "y_origin": 20,
@@ -5387,7 +5045,6 @@
             "control_type_schedule_name": "HVACTemplate-Always 4",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 146,
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES"
         },
         "ZN01_PV01_CO_RE_ATM_EQUIP Thermostat": {
@@ -5396,7 +5053,6 @@
             "control_type_schedule_name": "HVACTemplate-Always 4",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 162,
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP"
         },
         "ZN02_PV01_CO_RE_CAIXAS1 Thermostat": {
@@ -5405,7 +5061,6 @@
             "control_type_schedule_name": "HVACTemplate-Always 4",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 178,
             "zone_or_zonelist_name": "ZN02_PV01_CO_RE_CAIXAS1"
         },
         "ZN03_PV02_CO_RE_CAIXAS2 Thermostat": {
@@ -5414,7 +5069,6 @@
             "control_type_schedule_name": "HVACTemplate-Always 4",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 194,
             "zone_or_zonelist_name": "ZN03_PV02_CO_RE_CAIXAS2"
         },
         "ZN04_PV02_CO_RE_ADMIN Thermostat": {
@@ -5423,7 +5077,6 @@
             "control_type_schedule_name": "HVACTemplate-Always 4",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 210,
             "zone_or_zonelist_name": "ZN04_PV02_CO_RE_ADMIN"
         },
         "ZN05_PV02_CO_NO_SERVIDOR Thermostat": {
@@ -5432,7 +5085,6 @@
             "control_type_schedule_name": "HVACTemplate-Always 4",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 5,
-            "idf_order": 226,
             "zone_or_zonelist_name": "ZN05_PV02_CO_NO_SERVIDOR"
         }
     },
@@ -5440,7 +5092,6 @@
         "ZoneHVAC:EquipmentConnections 1": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 150,
             "zone_air_exhaust_node_or_nodelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES VRF Return",
             "zone_air_inlet_node_or_nodelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES VRF Supply Inlet",
             "zone_air_node_name": "ZN01_PV01_CO_RE_ATM_CLIENTES Zone Air Node",
@@ -5451,7 +5102,6 @@
         "ZoneHVAC:EquipmentConnections 2": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 166,
             "zone_air_exhaust_node_or_nodelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP VRF Return",
             "zone_air_inlet_node_or_nodelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP VRF Supply Inlet",
             "zone_air_node_name": "ZN01_PV01_CO_RE_ATM_EQUIP Zone Air Node",
@@ -5462,7 +5112,6 @@
         "ZoneHVAC:EquipmentConnections 3": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 182,
             "zone_air_exhaust_node_or_nodelist_name": "ZN02_PV01_CO_RE_CAIXAS1 VRF Return",
             "zone_air_inlet_node_or_nodelist_name": "ZN02_PV01_CO_RE_CAIXAS1 VRF Supply Inlet",
             "zone_air_node_name": "ZN02_PV01_CO_RE_CAIXAS1 Zone Air Node",
@@ -5473,7 +5122,6 @@
         "ZoneHVAC:EquipmentConnections 4": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 198,
             "zone_air_exhaust_node_or_nodelist_name": "ZN03_PV02_CO_RE_CAIXAS2 VRF Return",
             "zone_air_inlet_node_or_nodelist_name": "ZN03_PV02_CO_RE_CAIXAS2 VRF Supply Inlet",
             "zone_air_node_name": "ZN03_PV02_CO_RE_CAIXAS2 Zone Air Node",
@@ -5484,7 +5132,6 @@
         "ZoneHVAC:EquipmentConnections 5": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 214,
             "zone_air_exhaust_node_or_nodelist_name": "ZN04_PV02_CO_RE_ADMIN VRF Return",
             "zone_air_inlet_node_or_nodelist_name": "ZN04_PV02_CO_RE_ADMIN VRF Supply Inlet",
             "zone_air_node_name": "ZN04_PV02_CO_RE_ADMIN Zone Air Node",
@@ -5495,7 +5142,6 @@
         "ZoneHVAC:EquipmentConnections 6": {
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 6,
-            "idf_order": 230,
             "zone_air_exhaust_node_or_nodelist_name": "ZN05_PV02_CO_NO_SERVIDOR VRF Return",
             "zone_air_inlet_node_or_nodelist_name": "ZN05_PV02_CO_NO_SERVIDOR VRF Supply Inlet",
             "zone_air_node_name": "ZN05_PV02_CO_NO_SERVIDOR Zone Air Node",
@@ -5516,7 +5162,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 151,
             "load_distribution_scheme": "SequentialLoad"
         },
         "ZN01_PV01_CO_RE_ATM_EQUIP Equipment": {
@@ -5530,7 +5175,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 167,
             "load_distribution_scheme": "SequentialLoad"
         },
         "ZN02_PV01_CO_RE_CAIXAS1 Equipment": {
@@ -5544,7 +5188,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 183,
             "load_distribution_scheme": "SequentialLoad"
         },
         "ZN03_PV02_CO_RE_CAIXAS2 Equipment": {
@@ -5558,7 +5201,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 199,
             "load_distribution_scheme": "SequentialLoad"
         },
         "ZN04_PV02_CO_RE_ADMIN Equipment": {
@@ -5572,7 +5214,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 215,
             "load_distribution_scheme": "SequentialLoad"
         },
         "ZN05_PV02_CO_NO_SERVIDOR Equipment": {
@@ -5586,7 +5227,6 @@
             ],
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 6,
-            "idf_order": 231,
             "load_distribution_scheme": "SequentialLoad"
         }
     },
@@ -5602,7 +5242,6 @@
             "heating_supply_air_flow_rate": "Autosize",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 152,
             "no_cooling_supply_air_flow_rate": "Autosize",
             "no_heating_supply_air_flow_rate": "Autosize",
             "no_load_outdoor_air_flow_rate": "Autosize",
@@ -5629,7 +5268,6 @@
             "heating_supply_air_flow_rate": "Autosize",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 168,
             "no_cooling_supply_air_flow_rate": "Autosize",
             "no_heating_supply_air_flow_rate": "Autosize",
             "no_load_outdoor_air_flow_rate": "Autosize",
@@ -5656,7 +5294,6 @@
             "heating_supply_air_flow_rate": "Autosize",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 184,
             "no_cooling_supply_air_flow_rate": "Autosize",
             "no_heating_supply_air_flow_rate": "Autosize",
             "no_load_outdoor_air_flow_rate": "Autosize",
@@ -5683,7 +5320,6 @@
             "heating_supply_air_flow_rate": "Autosize",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 200,
             "no_cooling_supply_air_flow_rate": "Autosize",
             "no_heating_supply_air_flow_rate": "Autosize",
             "no_load_outdoor_air_flow_rate": "Autosize",
@@ -5710,7 +5346,6 @@
             "heating_supply_air_flow_rate": "Autosize",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 216,
             "no_cooling_supply_air_flow_rate": "Autosize",
             "no_heating_supply_air_flow_rate": "Autosize",
             "no_load_outdoor_air_flow_rate": "Autosize",
@@ -5737,7 +5372,6 @@
             "heating_supply_air_flow_rate": "Autosize",
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 23,
-            "idf_order": 232,
             "no_cooling_supply_air_flow_rate": "Autosize",
             "no_heating_supply_air_flow_rate": "Autosize",
             "no_load_outdoor_air_flow_rate": "Autosize",
@@ -5758,7 +5392,6 @@
         "ZoneTerminalUnitList 1": {
             "idf_max_extensible_fields": 4,
             "idf_max_fields": 5,
-            "idf_order": 243,
             "terminal_units": [
                 {
                     "zone_terminal_unit_name": "ZN01_PV01_CO_RE_ATM_CLIENTES VRF Terminal Unit"
@@ -5778,7 +5411,6 @@
         "ZoneTerminalUnitList 2": {
             "idf_max_extensible_fields": 1,
             "idf_max_fields": 2,
-            "idf_order": 266,
             "terminal_units": [
                 {
                     "zone_terminal_unit_name": "ZN05_PV02_CO_NO_SERVIDOR VRF Terminal Unit"
@@ -5789,7 +5421,6 @@
         "ZoneTerminalUnitList 3": {
             "idf_max_extensible_fields": 1,
             "idf_max_fields": 2,
-            "idf_order": 289,
             "terminal_units": [
                 {
                     "zone_terminal_unit_name": "ZN01_PV01_CO_RE_ATM_EQUIP VRF Terminal Unit"
@@ -5805,16 +5436,13 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
-            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
-            "idf_order": 127,
             "maximum_indoor_temperature": 100,
             "maximum_outdoor_temperature": 100,
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
-            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -5827,16 +5455,13 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
-            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
-            "idf_order": 123,
             "maximum_indoor_temperature": 100,
             "maximum_outdoor_temperature": 100,
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
-            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -5849,16 +5474,13 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
-            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
-            "idf_order": 124,
             "maximum_indoor_temperature": 100,
             "maximum_outdoor_temperature": 100,
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
-            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -5871,16 +5493,13 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
-            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
-            "idf_order": 125,
             "maximum_indoor_temperature": 100,
             "maximum_outdoor_temperature": 100,
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
-            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -5893,16 +5512,13 @@
             "design_flow_rate_calculation_method": "Flow/Person",
             "fan_pressure_rise": 100,
             "fan_total_efficiency": 0.9,
-            "flow_rate_per_person": 0.0075,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
-            "idf_order": 126,
             "maximum_indoor_temperature": 100,
             "maximum_outdoor_temperature": 100,
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
-            "schedule_name": "HVAC",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
@@ -5918,13 +5534,12 @@
             "flow_rate_per_person": 0,
             "idf_max_extensible_fields": 0,
             "idf_max_fields": 26,
-            "idf_order": 128,
             "maximum_indoor_temperature": 100,
             "maximum_outdoor_temperature": 100,
             "maximum_wind_speed": 40,
             "minimum_indoor_temperature": -100,
             "minimum_outdoor_temperature": -100,
-            "schedule_name": "HVAC",
+            "schedule_name": "Always Off",
             "temperature_term_coefficient": 0,
             "velocity_squared_term_coefficient": 0,
             "velocity_term_coefficient": 0,
