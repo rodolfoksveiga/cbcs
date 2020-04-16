@@ -1,4 +1,4 @@
-ghr,log_ghr,area,hvac,lights,boundaries,envelope,shgc,building,afn,atm_hvac_cons,atm_light_cons,atm_hvac_light_cons,atm_equip_cons,atm_cons,office_hvac_light_cons,office_equip_cons,office_cons,total_hvac_light_cons,total_equip_cons,total_cons,total_cons_area
+ghr,log_ghr,area,hvac,lights,boundaries,envelope,shgc,azimuth,afn,atm_hvac_cons,atm_light_cons,atm_hvac_light_cons,atm_equip_cons,atm_cons,office_hvac_light_cons,office_equip_cons,office_cons,total_hvac_light_cons,total_equip_cons,total_cons,total_cons_area
 3495,3.5,600,1,9.9,1,2.5,0.3,1,1,402.82,583.5,986.315239242292,2862.47,3848.79,29519.59,39869.73,69389.32,30505.91,42732.2,73238.11,122.06
 3495,3.5,600,1,23.6,2,2.5,0.3,3,1,715.94,1391.07,2107.00729580914,2862.47,4969.48,57176.45,39869.73,97046.18,59283.46,42732.2,102015.66,170.03
 3495,3.5,600,1,23.6,2,2.5,0.3,3,0,723.07,1391.07,2114.1398899738,2862.47,4976.61,59331.03,39869.73,99200.76,61445.17,42732.2,104177.37,173.63

@@ -1,4 +1,4 @@
-ghr,hvac,lights,boundaries,envelope,shgc,building,afn,atm_hvac_light_cons,atm_cons,office_hvac_light_cons,office_cons,total_hvac_light_cons,total_cons,total_cons_area
+ghr,hvac,lights,boundaries,envelope,shgc,azimuth,afn,atm_hvac_light_cons,atm_cons,office_hvac_light_cons,office_cons,total_hvac_light_cons,total_cons,total_cons_area
 3495,1,9.9,1,2.5,0.3,1,1,986.315239242292,3848.79,29519.59,69389.32,30505.91,73238.11,122.06
 3495,1,23.6,2,2.5,0.3,3,1,2107.00729580914,4969.48,57176.45,97046.18,59283.46,102015.66,170.03
 3495,1,23.6,2,2.5,0.3,3,0,2114.1398899738,4976.61,59331.03,99200.76,61445.17,104177.37,173.63

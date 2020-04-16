@@ -12,13 +12,13 @@ Variáveis presentes na base de dados:
 		alcance: 1 (vrf) ou 2 (splitão)
 	3. lights = densidade de potência para iluminação (W/m²)
 		alcance: 9.9 a 23.6
-	4. boundaries = condição de exposição das fachadas [fachadas expostas ou adiabáticas] (qualitativa)
+	4. boundaries = condição de exposição das fachadas [fachadas adiabáticas ou expostas] (qualitativa)
 		alcance: 1 (apenas a fachada de entrada exposta) ou 2 (todas as fachadas expostas)
 	5. envelope = transmitância térmica das paredes (kWh/m²K)
 		alcance: 2.5 a 3.7
 	6. shgc = fator solar dos vidros (adimensional)
 		alcance: 0.3 a 0.7
-	7. building = orientação da edificação (°)
+	7. azimuth = orientação da edificação (°)
 		alcance: 0 a 360
 	8. afn = nível de trocas de ar (qualtativa)
 		alcance: 0 (lotação mínima) ou 1 (lotação máxima)
@@ -28,6 +28,80 @@ Variáveis presentes na base de dados:
 A base de dados foi normalizada e foram criadas variáveis dummies para representar as variáveis qualitativas.
 80% da amostra foi utilizada na etapa de treinamento e validação e 20% da amostra foi utilizada na etapa de teste.
 Na etapa de treinamento os modelos utilizaram a técnica Cross-Validation com 10 folds.
+
+########################################
+########################################
+
+Linear Regression
+	Pacote: stats
+	Função: lm
+	Função no Caret: lm
+
+------ Resumo dos Modelos ------
+  RMSE       Rsquared   MAE      
+  3944.991   0.9609118  3129.142
+--------------------------------
+
+------ Tempo ------
+Total: 1.033
+Modelo Final: 0.008
+-------------------
+
+--------------- Modelo Final ---------------
+y = 38010.72 + 0.329*ghr + 19488.156*hvac +
+	14949.108*lights + 1949.159*boundaries -
+	1013.419*envelope + 477.969*shgc +
+	236.561*azimuth + 1370.302*afn
+--------------------------------------------
+
+--------- Teste ---------
+MAE = 3283.536 -- kwh/ano
+RMSE = 4132.867 - kwh/ano
+NRMSE = 5.0 ----- % 
+-------------------------
+
+########################################
+
+Boosted Linear Model
+	Pacote: bst
+	Função: bst
+	Função no Caret: BstLm
+
+--------- Resumo dos Modelos - -------
+  mstop  RMSE      Rsquared   MAE     
+   50    8093.433  0.8787860  6269.631
+  100    5998.019  0.9214119  4319.580
+  150    5209.764  0.9382303  3703.389
+  200    4794.205  0.9464863  3453.314
+  250    4514.338  0.9516933  3300.121
+  300    4322.600  0.9550046  3212.003
+  350    4194.764  0.9570443  3160.843
+  400    4110.896  0.9583678  3136.717
+  450    4056.646  0.9592025  3126.323
+X 500    4019.558  0.9597627  3121.226
+--------------------------------------
+
+------------- Hiperparâmetros -------------
+Number of boosting iterations (mstop): 500
+-------------------------------------------
+
+------ Tempo ------
+Total: 7.795
+Modelo Final: 0.527
+-------------------
+
+-------------- Modelo Final --------------
+Base learner: LS
+Number of boosting iterations (mstop): 500
+Step size: 0.1
+Offset: 62252.12
+------------------------------------------
+
+--------- Teste ---------
+MAE = 3229.587 -- kwh/ano
+RMSE = 4163.555 - kwh/ano
+NRMSE = 5.0 ----- % 
+-------------------------
 
 ########################################
 
@@ -181,10 +255,10 @@ X  7        100     465.2968  0.9994515   323.3374
   10        500     468.4539  0.9994441   323.0399
 --------------------------------------------------
 
------- Hiperparâmetros ------
-Number of trees (mstop): 100
+------------- Hiperparâmetros -------------
+Number of boosting iterations (mstop): 100
 Max tree depth (maxdepth): 7
------------------------------
+-------------------------------------------
 
 ------- Tempo -------
 Total: 977.458
