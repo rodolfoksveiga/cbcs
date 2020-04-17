@@ -1,5 +1,4 @@
-# base functions()
-# load libraries
+# load libraries ####
 LoadLib = function(pkgs) lapply(pkgs, library, character.only = T)
 LoadLib(c('caret', 'hydroGOF', 'keras', 'kernlab', 'Metrics', 'parallel'))
 
@@ -124,7 +123,7 @@ SavePlot = function(plot, plot_name, output_dir, lx = 33.8, ly = 19) {
 # main code ####
 # load data
 raw_data =
-  LoadData('/home/rodox/00.git/02.commercial_model/03.source/data_bank.csv')
+  LoadData('/home/rodox/00.git/02.commercial_model/04.source/data_bank.csv')
 # data inspection
 InspData(raw_data)
 # create dummy variables
@@ -136,10 +135,6 @@ data = lapply(list('train' = TRUE, 'test' = FALSE), SplitData,
 # pre-process data
 pp_model = preProcess(data$train[, c(4, 7:9)], method = c('center', 'scale'))
 data = lapply(data, PPData, pp_model)
-
-models = mclapply(list('lm' = 'lm', 'blm' = 'BstLm'),
-                  FitModel, 'cv', 10, NA, data$train, mc.cores = detectCores())
-
 # train
 models = mclapply(list('lm' = 'lm', 'blm' = 'BstLm',
                        'qrf' = 'qrf', 'gbrt' = 'blackboost',
