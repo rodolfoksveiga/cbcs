@@ -215,7 +215,7 @@
       "solar_distribution": "FullExterior",
       "temperature_convergence_tolerance_value": 0.4,
       "terrain": "Suburbs",
-      "north_axis": 189.2222
+      "north_axis": 90.3516
     }
   },
   "BuildingSurface:Detailed": {
@@ -348,9 +348,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN01_PV01_CO_RE_ATM_CLIENTES",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 5": {
       "construction_name": "Exterior Wall",
@@ -414,9 +414,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN01_PV01_CO_RE_ATM_EQUIP",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 7": {
       "construction_name": "Exterior Floor",
@@ -481,9 +481,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN02_PV01_CO_RE_CAIXAS1",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 9": {
       "construction_name": "Interior Wall",
@@ -548,9 +548,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN02_PV01_CO_RE_CAIXAS1",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 11": {
       "construction_name": "Exterior Wall",
@@ -582,9 +582,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN02_PV01_CO_RE_CAIXAS1",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 12": {
       "construction_name": "Interior Ceiling",
@@ -692,9 +692,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN03_PV02_CO_RE_CAIXAS2",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 15": {
       "construction_name": "Exterior Wall",
@@ -758,9 +758,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN03_PV02_CO_RE_CAIXAS2",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 17": {
       "construction_name": "Interior Wall",
@@ -825,9 +825,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN03_PV02_CO_RE_CAIXAS2",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 19": {
       "construction_name": "Interior Floor",
@@ -902,9 +902,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN04_PV02_CO_RE_ADMIN",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 21": {
       "construction_name": "Interior Wall",
@@ -1002,9 +1002,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN04_PV02_CO_RE_ADMIN",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 24": {
       "construction_name": "Exterior Wall",
@@ -1036,9 +1036,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN04_PV02_CO_RE_ADMIN",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 25": {
       "construction_name": "Interior Wall",
@@ -1103,9 +1103,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN04_PV02_CO_RE_ADMIN",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 26A": {
       "construction_name": "Exterior Roof",
@@ -1137,9 +1137,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN04_PV02_CO_RE_ADMIN",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 27": {
       "construction_name": "Interior Floor",
@@ -1204,9 +1204,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN05_PV02_CO_NO_SERVIDOR",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 29": {
       "construction_name": "Interior Wall",
@@ -1304,9 +1304,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN05_PV02_CO_NO_SERVIDOR",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 32": {
       "construction_name": "Exterior Roof",
@@ -1338,9 +1338,9 @@
       ],
       "view_factor_to_ground": "Autocalculate",
       "zone_name": "ZN05_PV02_CO_NO_SERVIDOR",
-      "outside_boundary_condition": "Adiabatic",
-      "sun_exposure": "NoSun",
-      "wind_exposure": "NoWind"
+      "outside_boundary_condition": "Outdoors",
+      "sun_exposure": "SunExposed",
+      "wind_exposure": "WindExposed"
     },
     "Surface 33": {
       "construction_name": "Interior Ceiling",
@@ -3270,7 +3270,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - ATM_CLIENTES",
       "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES",
-      "watts_per_zone_floor_area": 13.2132
+      "watts_per_zone_floor_area": 10.6973
     },
     "Light 02": {
       "design_level_calculation_method": "Watts/Area",
@@ -3286,7 +3286,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - Caixas e ADM",
       "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP",
-      "watts_per_zone_floor_area": 13.2132
+      "watts_per_zone_floor_area": 10.6973
     },
     "Light 03": {
       "design_level_calculation_method": "Watts/Area",
@@ -3302,7 +3302,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - Caixas e ADM",
       "zone_or_zonelist_name": "ZN02_PV01_CO_RE_CAIXAS1",
-      "watts_per_zone_floor_area": 13.2132
+      "watts_per_zone_floor_area": 10.6973
     },
     "Light 04": {
       "design_level_calculation_method": "Watts/Area",
@@ -3318,7 +3318,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - Caixas e ADM",
       "zone_or_zonelist_name": "ZN03_PV02_CO_RE_CAIXAS2",
-      "watts_per_zone_floor_area": 13.2132
+      "watts_per_zone_floor_area": 10.6973
     },
     "Light 05": {
       "design_level_calculation_method": "Watts/Area",
@@ -3334,7 +3334,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - Caixas e ADM",
       "zone_or_zonelist_name": "ZN04_PV02_CO_RE_ADMIN",
-      "watts_per_zone_floor_area": 13.2132
+      "watts_per_zone_floor_area": 10.6973
     },
     "Light 06": {
       "design_level_calculation_method": "Watts/Area",
@@ -5067,7 +5067,7 @@
       "idf_max_fields": 4,
       "u_factor": 5.6,
       "visible_transmittance": 0.4,
-      "solar_heat_gain_coefficient": 0.6575
+      "solar_heat_gain_coefficient": 0.4832
     }
   },
   "Zone": {
@@ -5534,8 +5534,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN04_PV02_CO_RE_ADMIN",
-      "schedule_name": "Always Off",
-      "flow_rate_per_person": 0
+      "schedule_name": "HVAC",
+      "flow_rate_per_person": 0.0075
     },
     "ATM_CLIE": {
       "constant_term_coefficient": 1,
@@ -5555,8 +5555,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES",
-      "schedule_name": "Always Off",
-      "flow_rate_per_person": 0
+      "schedule_name": "HVAC",
+      "flow_rate_per_person": 0.0075
     },
     "ATM_EQUIP": {
       "constant_term_coefficient": 1,
@@ -5576,8 +5576,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP",
-      "schedule_name": "Always Off",
-      "flow_rate_per_person": 0
+      "schedule_name": "HVAC",
+      "flow_rate_per_person": 0.0075
     },
     "CAIXAS1": {
       "constant_term_coefficient": 1,
@@ -5597,8 +5597,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN02_PV01_CO_RE_CAIXAS1",
-      "schedule_name": "Always Off",
-      "flow_rate_per_person": 0
+      "schedule_name": "HVAC",
+      "flow_rate_per_person": 0.0075
     },
     "CAIXAS2": {
       "constant_term_coefficient": 1,
@@ -5618,8 +5618,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN03_PV02_CO_RE_CAIXAS2",
-      "schedule_name": "Always Off",
-      "flow_rate_per_person": 0
+      "schedule_name": "HVAC",
+      "flow_rate_per_person": 0.0075
     },
     "SERVIDOR": {
       "constant_term_coefficient": 1,

@@ -1,3 +1,6 @@
+# load library
+library(dplyr)
+
 # base functions ####
 # turn sample sample variables into discrete
 DiscVar = function(var, val1, val2) ifelse(var <= 1, val1, val2)

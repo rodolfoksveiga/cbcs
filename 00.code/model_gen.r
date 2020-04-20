@@ -103,14 +103,6 @@ DefBoundaries = function(boundaries, objects) {
 # main function ####
 ModelGen = function(seed_path, envelope, lights, shgc, afn,
                     azimuth, boundaries, model_name, output_dir) {
-  seed_path = '/home/rodox/00.git/02.commercial_model/01.seed/seed_vrf_bank.epJSON'
-  envelope = 2.5
-  lights = 13.213213213
-  shgc = 0.65746475654
-  afn = 'min'
-  azimuth = 189.22222222
-  boundaries = 'adiabatic'
-  
   # load seed file
   seed = rjson::fromJSON(file = seed_path)
   # envelope
