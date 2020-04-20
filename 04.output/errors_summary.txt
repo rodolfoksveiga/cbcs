@@ -1,0 +1,4 @@
+Number of simulations with:
+    Terminal errors = 0
+    Severe errors = 0
+    Warnings = 1937

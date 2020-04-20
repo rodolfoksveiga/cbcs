@@ -1,6 +1,6 @@
 # load libraries ####
 LoadLib = function(pkgs) lapply(pkgs, library, character.only = T)
-LoadLib(c('caret', 'hydroGOF', 'keras', 'kernlab', 'Metrics', 'parallel'))
+LoadLib(c('caret', 'hydroGOF', 'Metrics', 'parallel'))
 
 # base functions ####
 # load data
@@ -123,7 +123,7 @@ SavePlot = function(plot, plot_name, output_dir, lx = 33.8, ly = 19) {
 # main code ####
 # load data
 raw_data =
-  LoadData('/home/rodox/00.git/02.commercial_model/04.source/data_bank.csv')
+  LoadData('/home/rodox/00.git/02.commercial_model/00.code/data.csv')
 # data inspection
 InspData(raw_data)
 # create dummy variables
@@ -133,7 +133,8 @@ data = vector('list', 2)
 data = lapply(list('train' = TRUE, 'test' = FALSE), SplitData,
               dummy_data, 0.8)
 # pre-process data
-pp_model = preProcess(data$train[, c(4, 7:9)], method = c('center', 'scale'))
+pp_model = preProcess(data$train[, c('envelope', 'lights', 'shgc', 'azimuth', 'ghr')],
+                      method = c('center', 'scale'))
 data = lapply(data, PPData, pp_model)
 # train
 models = mclapply(list('lm' = 'lm', 'blm' = 'BstLm',
