@@ -215,7 +215,7 @@
       "solar_distribution": "FullExterior",
       "temperature_convergence_tolerance_value": 0.4,
       "terrain": "Suburbs",
-      "north_axis": 146.6016
+      "north_axis": 189.2222
     }
   },
   "BuildingSurface:Detailed": {
@@ -1789,21 +1789,19 @@
     },
     "Exterior Roof": {
       "idf_max_extensible_fields": 0,
-      "idf_max_fields": 6,
-      "outside_layer": "fibrocimento telha branca",
+      "idf_max_fields": 5,
+      "outside_layer": "fibrocimento telha",
       "layer_2": "Camara telhado",
-      "layer_3": "laje nervurada EPS",
-      "layer_4": "vazio",
-      "layer_5": "EPS laje nervurada"
+      "layer_3": "vazio",
+      "layer_4": "forro"
     },
     "Exterior Wall": {
       "idf_max_extensible_fields": 0,
-      "idf_max_fields": 6,
-      "outside_layer": "argamassa",
-      "layer_2": "tijolo ceramico",
-      "layer_3": "Camara parede",
-      "layer_4": "tijolo ceramico",
-      "layer_5": "gesso"
+      "idf_max_fields": 5,
+      "outside_layer": "placa granito",
+      "layer_2": "argamassa assent",
+      "layer_3": "Concreto parede",
+      "layer_4": "gesso"
     },
     "Exterior Window": {
       "idf_max_extensible_fields": 0,
@@ -3272,7 +3270,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - ATM_CLIENTES",
       "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES",
-      "watts_per_zone_floor_area": 10.2598
+      "watts_per_zone_floor_area": 13.2132
     },
     "Light 02": {
       "design_level_calculation_method": "Watts/Area",
@@ -3288,7 +3286,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - Caixas e ADM",
       "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP",
-      "watts_per_zone_floor_area": 10.2598
+      "watts_per_zone_floor_area": 13.2132
     },
     "Light 03": {
       "design_level_calculation_method": "Watts/Area",
@@ -3304,7 +3302,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - Caixas e ADM",
       "zone_or_zonelist_name": "ZN02_PV01_CO_RE_CAIXAS1",
-      "watts_per_zone_floor_area": 10.2598
+      "watts_per_zone_floor_area": 13.2132
     },
     "Light 04": {
       "design_level_calculation_method": "Watts/Area",
@@ -3320,7 +3318,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - Caixas e ADM",
       "zone_or_zonelist_name": "ZN03_PV02_CO_RE_CAIXAS2",
-      "watts_per_zone_floor_area": 10.2598
+      "watts_per_zone_floor_area": 13.2132
     },
     "Light 05": {
       "design_level_calculation_method": "Watts/Area",
@@ -3336,7 +3334,7 @@
       "return_air_fraction_function_of_plenum_temperature_coefficient_2": 0,
       "schedule_name": "ILU - Caixas e ADM",
       "zone_or_zonelist_name": "ZN04_PV02_CO_RE_ADMIN",
-      "watts_per_zone_floor_area": 10.2598
+      "watts_per_zone_floor_area": 13.2132
     },
     "Light 06": {
       "design_level_calculation_method": "Watts/Area",
@@ -5069,7 +5067,7 @@
       "idf_max_fields": 4,
       "u_factor": 5.6,
       "visible_transmittance": 0.4,
-      "solar_heat_gain_coefficient": 0.3707
+      "solar_heat_gain_coefficient": 0.6575
     }
   },
   "Zone": {
@@ -5536,8 +5534,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN04_PV02_CO_RE_ADMIN",
-      "schedule_name": "HVAC",
-      "flow_rate_per_person": 0.0075
+      "schedule_name": "Always Off",
+      "flow_rate_per_person": 0
     },
     "ATM_CLIE": {
       "constant_term_coefficient": 1,
@@ -5557,8 +5555,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES",
-      "schedule_name": "HVAC",
-      "flow_rate_per_person": 0.0075
+      "schedule_name": "Always Off",
+      "flow_rate_per_person": 0
     },
     "ATM_EQUIP": {
       "constant_term_coefficient": 1,
@@ -5578,8 +5576,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_EQUIP",
-      "schedule_name": "HVAC",
-      "flow_rate_per_person": 0.0075
+      "schedule_name": "Always Off",
+      "flow_rate_per_person": 0
     },
     "CAIXAS1": {
       "constant_term_coefficient": 1,
@@ -5599,8 +5597,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN02_PV01_CO_RE_CAIXAS1",
-      "schedule_name": "HVAC",
-      "flow_rate_per_person": 0.0075
+      "schedule_name": "Always Off",
+      "flow_rate_per_person": 0
     },
     "CAIXAS2": {
       "constant_term_coefficient": 1,
@@ -5620,8 +5618,8 @@
       "velocity_term_coefficient": 0,
       "ventilation_type": "Intake",
       "zone_or_zonelist_name": "ZN03_PV02_CO_RE_CAIXAS2",
-      "schedule_name": "HVAC",
-      "flow_rate_per_person": 0.0075
+      "schedule_name": "Always Off",
+      "flow_rate_per_person": 0
     },
     "SERVIDOR": {
       "constant_term_coefficient": 1,

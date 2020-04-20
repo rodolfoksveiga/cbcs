@@ -18,7 +18,6 @@ FixSample = function(sample,
 
 # label case
 LabelCase = function(sample) {
-  hvac = ifelse(grepl('_split_', sample$seed), 'split', 'vrf')
   label = paste0('h_', sample$hvac, '_e_', sample$envelope, '_l_',
                  round(sample$lights, 2), '_s_', round(sample$shgc, 2),
                  '_v_', sample$afn, '_a_', round(sample$azimuth, 2),
