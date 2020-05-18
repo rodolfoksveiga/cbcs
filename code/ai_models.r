@@ -110,9 +110,20 @@ SavePlot = function(plot, plot_name, output_dir, lx = 33.8, ly = 19) {
   dev.off()
 }
 
-ProcessModel = function(data_path, data_extra_path, weather_var, sobol,
-                        load_models = F, models_path, save_models = F,
-                        output_dir) {
+ProcessModel = function(data_path, data_extra_path, weather_var, sobol, load_models,
+                        models_path, save_plots, save_models, op_dir, om_dir) {
+  
+  data_path = '/home/rodox/git/commercial_model/data/data_sobol.csv'
+  data_extra_path = '/home/rodox/git/commercial_model/data/data_extra_rv.csv'
+  weather_var = 'ghr'
+  sobol = T
+  load_models = T
+  models_path = '~/Desktop/models/models_sobol_ghr.RData'
+  save_plots = T
+  save_models = F
+  om_dir = '~/Desktop/models/'
+  op_dir = '~/Desktop/plots/'
+  
   # load data
   raw_data = read.csv(data_path)
   raw_data_extra = read.csv(data_extra_path)
@@ -166,15 +177,19 @@ ProcessModel = function(data_path, data_extra_path, weather_var, sobol,
                       FitModel, 'cv', 10, NA, data$train, mc.cores = detectCores())
   }
   
-  # results
+  # plots and results
   # stats comparison between models
   models_comp = CompModels(models)
-  if (save_models) {
+  if (save_plots) {
     # plot comparison between models
-    PlotComp(models_comp, weather_var, sobol, output_dir)
+    PlotComp(models_comp, weather_var, sobol, op_dir)
     # plot training process
-    # mapply(PlotFit, models[-1], names(models[-1]), weather_var, sobol,
-    #        MoreArgs = list(output_dir))
+    mapply(PlotFit, models[-1], names(models[-1]), weather_var, sobol,
+           MoreArgs = list(op_dir))
+  }
+  if (save_models) {
+    save(models, file = paste0(om_dir, 'models_', ifelse(sobol, 'sobol', 'extreme'),
+                               '_', weather_var, '.RData'))
   } else {
     models_summ = summary(models_comp)
     results = list('models' = models, 'summ' = models_summ,
@@ -185,8 +200,18 @@ ProcessModel = function(data_path, data_extra_path, weather_var, sobol,
 }
 
 # application ####
-results = ProcessModel(data_path = '/home/rodox/00.git/02.commercial_model/data/data_sobol.csv',
-             data_extra_path = '/home/rodox/00.git/02.commercial_model/data/data_extra_rv.csv',
-             weather_var = 'temp', sobol = T, load_models = T, save_models = T,
-             models_path = '/home/rodox/00.git/02.commercial_model/code/models_sobol_temp.RData',
-             output_dir = '/home/rodox/00.git/02.commercial_model/plot_table/')
+results = ProcessModel(data_path = '/home/rodox/git/commercial_model/data/data_sobol.csv',
+             data_extra_path = '/home/rodox/git/commercial_model/data/data_extra_rv.csv',
+             weather_var = 'temp', sobol = T, load_models = F, save_plots = T, save_models = F,
+             om_dir = '/home/rodox/git/commercial_model/code/',
+             op_dir = '/home/rodox/git/commercial_model/plot_table/')
+
+# data_paths = c(rep('/home/rodox/git/commercial_model/data/data_sobol.csv', 2),
+#                rep('/home/rodox/git/commercial_model/data/data_extreme.csv', 2))
+# data_extra_paths = c(rep('/home/rodox/git/commercial_model/data/data_extra_rv.csv', 2),
+#                      rep('/home/rodox/git/commercial_model/data/data_extra_master.csv', 2))
+# weather_vars = rep(c('ghr', 'temp'), 2)
+# sobols = c(rep(T, 2), rep(F, 2))
+# mapply(ProcessModel, data_paths, data_extra_paths, weather_vars, sobols,
+#        load_models = F, save_plots = F, save_models = T,
+#        om_dir = '~/Desktop/models/', op_dir = '~/Desktop/plots/')

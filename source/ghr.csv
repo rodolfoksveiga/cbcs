@@ -1,9 +1,0 @@
-weather_file,country,state,city,lat,long,alt,ghr
-zb1_br_sp_campos_do_jordao_inmet.epw,br,sp,campos_do_jordao,-22.74,-45.59,1642,3495
-zb2_br_sp_sao_paulo_inmet.epw,br,sp,sao_paulo,-23.85,-46.64,792,14172
-zb3_br_rs_porto_alegre_inmet.epw,br,rs,porto_alegre,-30.03,-51.23,47,23954
-zb4_br_sp_campinas_inmet.epw,br,sp,campinas,-22.82,-47.06,640,31412
-zb5_br_rj_rio_de_janeiro_vila_militar_inmet.epw,br,rj,rio_de_janeiro,-22.86,-43.41,45,45016
-zb6_br_es_vitoria_inmet.epw,br,es,vitoria,-20.32,-40.34,9,54061
-zb7_br_pe_recife_inmet.epw,br,pe,recife,-8.05,-34.88,10,63550
-zb8_br_ce_fortaleza_pinto_martins_ap_inmet.epw,br,ce,fortaleza,-3.8,-38.53,41,71394

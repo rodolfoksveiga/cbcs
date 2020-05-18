@@ -3,14 +3,15 @@ import pandas as pd
 
 # define the input number, its names and limits
 problem = {
-    'num_vars': 7,
+    'num_vars': 8,
     'names': ['hvac', 'envelope', 'lights', 'shgc',
-			  'afn', 'azimuth', 'boundaries'],
+			  'afn', 'atm', 'azimuth', 'boundaries'],
     'bounds': [[0, 2],
 			   [0, 2],
 			   [10, 24],
 			   [0.3, 0.7],
 			   [0, 2],
+			   [0, 10],
 			   [0, 360],
 			   [0, 2]]
 }

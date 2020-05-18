@@ -1,0 +1,11 @@
+name: bank_prediction
+title: bank_prediction
+username:
+account: rodolfoksveiga
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2247666
+bundleId: 3112317
+url: https://rodolfoksveiga.shinyapps.io/bank_prediction/
+when: 1588792851.95378
+lastSyncTime: 1588792851.95381

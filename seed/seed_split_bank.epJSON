@@ -2777,13 +2777,6 @@
             "key_value": "*",
             "reporting_frequency": "Annual",
             "variable_name": "Lights Electric Energy"
-        },
-        "Output:Variable 6": {
-            "idf_max_extensible_fields": 0,
-            "idf_max_fields": 3,
-            "key_value": "*",
-            "reporting_frequency": "Annual",
-            "variable_name": "Exterior Lights Electric Energy"
         }
     },
     "Output:VariableDictionary": {

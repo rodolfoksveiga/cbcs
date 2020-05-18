@@ -12,6 +12,7 @@ FixSample = function(sample,
   sample[c('hvac', 'envelope', 'afn', 'boundaries')] =
     mapply(DiscVar, sample[c('hvac', 'envelope', 'afn', 'boundaries')],
            list('split', 2.5, 'min', 'adiabatic'), list('vrf', 3.7, 'max', 'outdoors'))
+  sample$atm = ceiling(sample$atm)
   sample = unique(sample)
   sample$seed = ifelse(sample$hvac == 'split', s1, s2)
   sample$case = LabelCase(sample)
@@ -21,10 +22,10 @@ FixSample = function(sample,
 
 # label case
 LabelCase = function(sample) {
-  label = paste0('h_', sample$hvac, '_e_', sample$envelope, '_l_',
-                 round(sample$lights, 2), '_s_', round(sample$shgc, 2),
-                 '_v_', sample$afn, '_a_', round(sample$azimuth, 2),
-                 '_b_', sample$boundaries)
+  label = paste0('hvac_', sample$hvac, '_env_', sample$envelope, '_light_',
+                 round(sample$lights, 2), '_shgc_', round(sample$shgc, 2),
+                 '_afn_', sample$afn, '_atm_', sample$atm, '_azi_',
+                 round(sample$azimuth, 2), '_bounds_', sample$boundaries)
   return(label)
 }
 
