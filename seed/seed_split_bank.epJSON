@@ -643,7 +643,7 @@
                 },
                 {
                     "vertex_x_coordinate": -13,
-                    "vertex_y_coordinate": -2.88764567812905e-15,
+                    "vertex_y_coordinate": 0,
                     "vertex_z_coordinate": 0
                 }
             ],
@@ -1543,7 +1543,7 @@
                 },
                 {
                     "vertex_x_coordinate": -13,
-                    "vertex_y_coordinate": -2.88764567812905e-15,
+                    "vertex_y_coordinate": 0,
                     "vertex_z_coordinate": 0
                 },
                 {
@@ -2197,7 +2197,6 @@
             "zone_or_zonelist_name": "ZN01_PV01_CO_RE_ATM_CLIENTES"
         },
         "EQUIP_CO_RE_ATM_EQUIP": {
-            "design_level": 994,
             "design_level_calculation_method": "EquipmentLevel",
             "end_use_subcategory": "General",
             "fraction_radiant": 0.2,

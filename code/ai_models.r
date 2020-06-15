@@ -6,7 +6,7 @@ LoadLib(c('caret', 'dplyr', 'hydroGOF', 'Metrics', 'parallel'))
 # rename analysis index r squared
 RenameRsq = function(x) sub('Rsquared', 'R²', x)
 
-# surrogate functions ####
+# surrogate model functions ####
 # create dummy variables
 CreateDummies = function(data) {
   dummy_model = dummyVars(targ ~ ., data = data)

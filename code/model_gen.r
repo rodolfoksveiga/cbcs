@@ -1,15 +1,16 @@
 # load libraries ####
-pkgs = c('parallel', 'stringr')
+pkgs = c('jsonlite', 'parallel', 'stringr')
 lapply(pkgs, library, character.only = T)
 
 # base functions ####
+# apply ModelGen
 ApplyModelGen = function(sample_path, output_dir) {
   sample = read.csv(sample_path, stringsAsFactors = F)
   mcmapply(ModelGen, sample$seed, sample$envelope, sample$lights,
            sample$shgc, sample$afn, sample$azimuth, sample$boundaries,
            sample$case, output_dir, mc.cores = detectCores())
 }
-
+# define fields values for an specific object
 ApplyObject = function(object, fields, values) {
   names = names(object)
   object = append(object, mapply(function(x, y) x = y, fields,
@@ -74,6 +75,13 @@ DefAFN = function(afn, objects) {
   return(objects)
 }
 
+# atm: 1 to 10
+  # consumption was defined as 142 watts, at first
+DefATM = function(atm, object, consumption = 142) {
+  object = ApplyObject(object, 'design_level', atm*consumption)
+  return(object)
+}
+
 # azimuth: 0 to 360
 DefAzimuth = function(azimuth, object) {
   if (azimuth >= 0 & azimuth <= 360) {
@@ -101,10 +109,10 @@ DefBoundaries = function(boundaries, objects) {
 }
 
 # main function ####
-ModelGen = function(seed_path, envelope, lights, shgc, afn,
+ModelGen = function(seed_path, envelope, lights, shgc, afn, atm,
                     azimuth, boundaries, model_name, output_dir) {
   # load seed file
-  seed = rjson::fromJSON(file = seed_path)
+  seed = read_json(file = seed_path)
   # envelope
   components = paste('Exterior', c('Wall', 'Roof'))
   seed$'Construction'[components] =
@@ -118,6 +126,9 @@ ModelGen = function(seed_path, envelope, lights, shgc, afn,
   # afn
   seed$'ZoneVentilation:DesignFlowRate'[c(1:5)] =
     DefAFN(afn, seed$'ZoneVentilation:DesignFlowRate'[c(1:5)])
+  # atm
+  seed$'ElectricEquipment'$'EQUIP_CO_RE_ATM_EQUIP' =
+    DefATM(atm, seed$'ElectricEquipment'$'EQUIP_CO_RE_ATM_EQUIP')
   # azimuth
   seed$'Building'$'AgenciaBancaria' =
     DefAzimuth(azimuth, seed$'Building'$'AgenciaBancaria')
@@ -129,7 +140,7 @@ ModelGen = function(seed_path, envelope, lights, shgc, afn,
     DefBoundaries(boundaries, seed$'BuildingSurface:Detailed'[surfs])
   # write the 'epJSON' file
   model_path = paste0(output_dir, model_name, '.epJSON')
-  jsonlite::write_json(seed, model_path, pretty = T, auto_unbox = T)
+  write_json(seed, model_path, pretty = T, auto_unbox = T)
   print(model_path)
 }
 
