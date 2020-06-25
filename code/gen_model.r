@@ -109,7 +109,7 @@ DefBoundaries = function(boundaries, objects) {
 }
 
 # main function ####
-ModelGen = function(seed_path, envelope, lights, shgc, afn, atm,
+GenModel = function(seed_path, envelope, lights, shgc, afn, atm,
                     azimuth, boundaries, model_name, output_dir) {
   # load seed file
   seed = read_json(file = seed_path)
@@ -145,7 +145,7 @@ ModelGen = function(seed_path, envelope, lights, shgc, afn, atm,
 }
 
 # application ####
-ApplyModelGen('/home/rodox/00.git/02.commercial_model/00.code/sample.csv',
+ApplyGenModel('/home/rodox/00.git/02.commercial_model/00.code/sample.csv',
               '/home/rodox/00.git/02.commercial_model/02.model/')
 
 # ModelGen('/home/rodox/00.git/02.commercial_model/01.seed/seed_split_bank.epJSON',
