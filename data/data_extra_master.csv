@@ -1,9 +1,0 @@
-hvac,envelope,lights,shgc,afn,azimuth,boundaries,ghr,tbs,tbu,targ
-split,3.7,15,0.3,max,90,outdoors,9367,17.38,13.25,92.91755
-split,3.7,20,0.3,max,90,outdoors,9367,17.38,13.25,109.318483333333
-vrf,3.7,15,0.3,max,90,outdoors,9367,17.38,13.25,72.4066166666667
-vrf,3.7,20,0.3,max,90,outdoors,9367,17.38,13.25,89.4302333333333
-split,3.7,15,0.3,max,90,outdoors,65930,25.52,21.39,136.101466666667
-split,3.7,20,0.3,max,90,outdoors,65930,25.52,21.39,154.9681
-vrf,3.7,15,0.3,max,90,outdoors,65930,25.52,21.39,93.2021
-vrf,3.7,20,0.3,max,90,outdoors,65930,25.52,21.39,110.00075

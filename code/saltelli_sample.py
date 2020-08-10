@@ -1,27 +1,26 @@
 from SALib.sample import saltelli
 import pandas as pd
+import numpy as np
 
-# define the input number, its names and limits
-problem = {
-    'num_vars': 10,
-    'names': ['afn', 'area', 'atm', 'azimuth', 'boundaries',
-              'cdh', 'envelope', 'hvac', 'lights', 'shgc'],
-    'bounds': [[0, 2],
-               [0, 796],
-               [3, 16],
-               [-1, 361],
-               [0, 2],
-               [0, 120],
-               [0, 2],
-               [0, 2],
-               [9.5, 24.5],
-               [0.25, 0.75]]
-}
+# define range
+def DefRange(bound, gap):
+  mult = (bound[1] - bound[0])*gap
+  inter = [bound[0] - mult, bound[1] + mult]
+  return(inter)
 
-# create a qasi-random sample following saltelli's methodology
-param_values = saltelli.sample(problem, 400)
-df = pd.DataFrame(param_values, columns = problem['names'])
-df.to_csv('/home/rodox/git/commercial_model/code/sample_train.csv')
-param_values = saltelli.sample(problem, 80)
-df = pd.DataFrame(param_values, columns = problem['names'])
-df.to_csv('/home/rodox/git/commercial_model/code/sample_test.csv')
+# generate sample
+def GenSample(names, bounds, gap, quals, size):
+    consts = np.repeat(gap, len(names))
+    consts[quals] = 0
+    bounds = [DefRange(bound, const) for bound, const in zip(bounds, consts)]
+    problem = {'num_vars': len(names), 'names': names, 'bounds': bounds}
+    param_values = saltelli.sample(problem, size)
+    df = pd.DataFrame(param_values, columns = problem['names'])
+    df.to_csv('~/git/cbcs/result/sobol_sample.csv', index = False)
+
+# main code
+names = ['hvac', 'afn', 'area', 'atm', 'azimuth', 'boundaries',
+         'cop', 'envelope', 'lights', 'shgc', 'epw']
+bounds = [[1, 3], [1, 5], [200, 1200], [5, 20], [0, 360], [1, 3],
+          [3, 6], [1, 3], [10, 24], [0.3, 0.7], [1, 412]]
+GenSample(names, bounds, 0.02, [0, 1, 5, 7, 10], 500)
