@@ -4,7 +4,7 @@ invisible({
   # required packages to fit models
   # pkgs = c(pkgs, 'quantregForest', 'party', 'mboost', 'plyr', 'kernlab', 'brnn')
   lapply(pkgs, library, character.only = T)
-  inmet = read.csv('./source/inmet_list.csv', stringsAsFactors = FALSE)
+  inmet = read.csv('~/git/cbcs/source/inmet_list.csv', stringsAsFactors = FALSE)
 })
 
 # base functions ####
@@ -210,5 +210,5 @@ GenMLModels = function(data_path, weather_var, nfolds, nreps, save_models,
 }
 
 # application ####
-GenMLModels('./result/sample.csv', 'cdh', 10, NA, TRUE, TRUE,
-            './result/', './plot_table/', 0, inmet)
+GenMLModels('~/git/cbcs/result/sample.csv', 'cdh', 10, NA, TRUE, TRUE,
+            '~/git/cbcs/result/', '~/git/cbcs/plot_table/', 0, inmet)
