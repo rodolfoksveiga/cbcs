@@ -1,4 +1,4 @@
-*.Rprofile
+*.rds
+*.rdata
 *.Rhistory
-*.RData
 .Rproj.user
