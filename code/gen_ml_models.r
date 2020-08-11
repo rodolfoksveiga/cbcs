@@ -4,7 +4,7 @@ invisible({
            'ggplot2', 'hydroGOF', 'Metrics', 'parallel')
   # required packages to fit models
   # pkgs = c(pkgs, 'quantregForest', 'party', 'mboost', 'plyr', 'kernlab', 'brnn')
-  lapply(pkgs, library, character.only = T)
+  lapply(pkgs, library, character.only = TRUE)
   inmet = read.csv('./source/inmet_list.csv', stringsAsFactors = FALSE)
 })
 
@@ -190,8 +190,8 @@ GenMLModels = function(data_path, weather_var, nfolds, nreps, tune_length, save_
     as.data.frame()
   # plots and results
   # stats comparison between models
-  suffix = paste0(weather_var, '_', nfolds, 'folds_',
-                  ifelse(is.na(nreps), 0, nreps), 'reps')
+  suffix = paste0(weather_var, '_f', nfolds, '_r',
+                  ifelse(is.na(nreps), 0, nreps), '_tl', tune_length)
   models_comp = CompModels(models)
   models_summ = summary(models_comp)
   if (save_results) {
@@ -216,5 +216,5 @@ GenMLModels = function(data_path, weather_var, nfolds, nreps, tune_length, save_
 }
 
 # application ####
-GenMLModels('./result/sample.csv', 'cdh', 2, NA, 2, TRUE, TRUE,
+GenMLModels('./result/sample.csv', 'cdh', 20, NA, 20, TRUE, TRUE,
             './result/', './plot_table/', 0, inmet)

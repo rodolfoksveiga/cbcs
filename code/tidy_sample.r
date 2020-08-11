@@ -1,11 +1,5 @@
 # main function ####
 TidySample = function(sample_path, seeds_dir, models_dir, epws_dir, inmet) {
-  
-  sample_path = './result/sobol_sample.csv'
-  seeds_dir = './seed/'
-  models_dir = '~/rolante/cbcs/model/'
-  epws_dir = '~/rolante/weather/'
-  
   sample = read.csv(sample_path, stringsAsFactors = FALSE)
   quals = c('hvac', 'afn', 'boundaries', 'envelope', 'epw')
   sample[, quals] = floor(sample[, quals])
