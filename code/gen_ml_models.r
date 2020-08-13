@@ -166,7 +166,7 @@ GenMLModels = function(data_path, weather_var, nfolds, nreps, tune_length, save_
   str(raw_data)
   # define qualitative and quantitative variables
   qual_vars = c('hvac', 'afn', 'boundaries', 'envelope')
-  quant_vars = colnames(raw_data[-c(1, length(raw_data))])
+  quant_vars = colnames(raw_data[-length(raw_data)])
   quant_vars = quant_vars[!quant_vars %in% qual_vars]
   # edit sample
   raw_data$epw = inmet[raw_data$epw, weather_var]
