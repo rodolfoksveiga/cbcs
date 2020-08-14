@@ -216,5 +216,5 @@ GenMLModels = function(data_path, weather_var, nfolds, nreps, tune_length, save_
 }
 
 # application ####
-GenMLModels('./result/sample.csv', 'cdh', 10, NA, 10, TRUE, TRUE,
+GenMLModels('./result/sample.csv', 'cdh', 15, NA, 15, TRUE, TRUE,
             './result/', './plot_table/', 0, inmet)
