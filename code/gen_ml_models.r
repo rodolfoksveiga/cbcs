@@ -182,7 +182,7 @@ GenMLModels = function(data_path, weather_var, nfolds, nreps, tune_length, save_
   # train
   models_list = list(lm = 'lm', gbrt = 'blackboost', qrf = 'qrf',
                      svm = 'svmRadial', brnn = 'brnn')
-  models = lapply(models_list, FitModel, 'cv', nfolds, nreps,
+  models = lapply(models_list, FitModel, 'repeatedcv', nfolds, nreps,
                   tune_length, dummy_data$train, cores_left)
   # test
   predictions = models %>%
@@ -216,5 +216,5 @@ GenMLModels = function(data_path, weather_var, nfolds, nreps, tune_length, save_
 }
 
 # application ####
-GenMLModels('./result/sample.csv', 'cdh', 15, NA, 15, TRUE, TRUE,
+GenMLModels('./result/sample.csv', 'cdh', 5, 5, 5, TRUE, TRUE,
             './result/', './plot_table/', 0, inmet)
