@@ -49,3 +49,14 @@ plot = ggplot(sample) +
         axis.text.y = element_text(size = 19))
 plot(plot)
 dev.off()
+
+# test
+# lliefors (kolmogorov-smirnov)
+# p-value < 0.05 -> non-normal data
+lillie.test(dummy_data$train$targ)
+# anderson-darling
+ad.test(dummy_data$train$targ)
+# pearson chi-square
+pearson.test(dummy_data$train$targ)
+# box-cox transformation
+BCTData = BoxCoxTrans(dummy_data$train$targ)

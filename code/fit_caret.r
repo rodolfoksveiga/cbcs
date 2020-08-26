@@ -1,7 +1,7 @@
 # load libraries and global environment ####
 invisible({
-  pkgs = c('caret', 'doParallel', 'data.table', 'dplyr', 'ggplot2',
-           'hydroGOF', 'keras', 'Metrics', 'nortest', 'parallel')
+  pkgs = c('caret', 'doParallel', 'data.table', 'dplyr',
+           'ggplot2', 'hydroGOF', 'Metrics', 'parallel')
   # required packages to fit models
   # pkgs = c(pkgs, 'quantregForest', 'party', 'mboost', 'plyr', 'kernlab', 'brnn')
   lapply(pkgs, library, character.only = TRUE)
@@ -166,25 +166,9 @@ SummAccuracy = function(model, train_tech, pred, targ) {
 # main function ####
 GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results,
                        save_models, models_dir, plots_dir, cores_left, inmet) {
-
-  # test
-  # # lliefors (kolmogorov-smirnov)
-  # # p-value < 0.05 -> non-normal data
-  # lillie.test(dummy_data$train$targ)
-  # # anderson-darling
-  # ad.test(dummy_data$train$targ)
-  # # pearson chi-square
-  # pearson.test(dummy_data$train$targ)
-  # # box-cox transformation
-  # BCTData = BoxCoxTrans(dummy_data$train$targ)
-  
   # load data
   raw_data = read.csv(data_path)
   str(raw_data)
-  
-  # test
-  # raw_data = SplitData(TRUE, raw_data, 0.01)
-  
   # define qualitative and quantitative variables
   qual_vars = c('hvac', 'afn', 'boundaries', 'envelope')
   quant_vars = colnames(raw_data[-length(raw_data)])
@@ -201,11 +185,9 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
   tune_grids = list(lm = NULL,
                     svmr = expand.grid(.sigma = 0.034, .C = 22), # OK
                     svmp = expand.grid(.degree = 5, .scale = 0.05, .C = 0.15), # OK
-                    brnn = expand.grid(.neurons = 15:35),
-                    mars = expand.grid(.degree = 4:10))
-  models_list = list(lm = 'lm', svmr = 'svmRadial', svmp = 'svmPoly',
-                     brnn = 'brnn', mars = 'bagEarthGCV')
-  models = mapply(FitModel, models_list[c(1, 4, 5)], tune_grids[c(1, 4, 5)], SIMPLIFY = FALSE,
+                    brnn = expand.grid(.neurons = 1:40))
+  models_list = list(lm = 'lm', svmr = 'svmRadial', svmp = 'svmPoly', brnn = 'brnn')
+  models = mapply(FitModel, models_list[c(1, 4)], tune_grids[c(1, 4)], SIMPLIFY = FALSE,
                   MoreArgs = list('cv', nfolds, dummy_data$train, cores_left))
   # test
   predictions = models %>%
@@ -217,21 +199,21 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
   models_comp = CompModels(models)
   models_summ = summary(models_comp)
   if (save_results) {
-    # # plot comparison between models
-    # PlotComp(models_comp, suffix, plots_dir)
-    # # plot training process
-    # mapply(PlotFit, models[-1], names(models[-1]), suffix, MoreArgs = list(plots_dir))
-    # # plot model performance
-    # mapply(PlotPerf, names(models), predictions,
-    #        MoreArgs = list(dummy_data$test$targ, suffix, plots_dir))
-    # # plot variables importance
-    # mapply(PlotVarImp, names(models), predictions,
-    #        MoreArgs = list(raw_data$test, suffix, plots_dir))
+    # plot comparison between models
+    PlotComp(models_comp, suffix, plots_dir)
+    # plot training process
+    mapply(PlotFit, models[-1], names(models[-1]), suffix, MoreArgs = list(plots_dir))
+    # plot model performance
+    mapply(PlotPerf, names(models), predictions,
+           MoreArgs = list(dummy_data$test$targ, suffix, plots_dir))
+    # plot variables importance
+    mapply(PlotVarImp, names(models), predictions,
+           MoreArgs = list(raw_data$test, suffix, plots_dir))
     # generate accuracy table
     GenAccuracyTable(models, predictions, dummy_data$test$targ, suffix, plots_dir)
   }
   if (save_models) {
-    save(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
+    saveRDS(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
   } else {
     return(models)
   }
