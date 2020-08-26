@@ -68,11 +68,11 @@ DefArea = function(group, type, area) {
   return(group)
 }
 # atm: 5 to 20 [m²/atm]
-# consumption was defined as 142 watts, at first
-DefATM = function(atm, object, consumption = 142) {
+# power was defined as 142 watts, at first
+DefATM = function(atm, object, power = 142) {
   inter = DefRange(c(5, 20), 0.02)
   if (atm >= inter[1] & atm <= inter[2]) {
-    dens = (1/atm)*(130/20)*consumption
+    dens = (1/atm)*(130/20)*power
     object = AddFields(object, 'watts_per_zone_floor_area', dens)
   } else {
     stop('Invalid ATM density!')
