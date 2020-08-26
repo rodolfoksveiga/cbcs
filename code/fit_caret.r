@@ -11,11 +11,6 @@ invisible({
 # base functions ####
 # rename analysis index r squared
 RenameRsq = function(x) sub('Rsquared', 'R²', x)
-# define qualitative variables as factors
-DefFactors = function(df, vars) {
-  df[, vars] = lapply(df[, vars], factor)
-  return(df)
-}
 
 # machine learning model functions ####
 # create dummy variables
@@ -37,11 +32,6 @@ SplitData = function(train, data, train_prop, seed = 100) {
   }
   return(data)
 }
-# pre-process data
-PPData = function(data, pp_model) {
-  data = predict(pp_model, data)
-  return(data)
-}
 # fit
 FitModel = function(train_tech, tune_grid, samp_tech, nfolds, train_data,
                     cores_left, tune_length, eval = 'RMSE', seed = 200) {
@@ -61,13 +51,6 @@ FitModel = function(train_tech, tune_grid, samp_tech, nfolds, train_data,
   registerDoSEQ()
   gc()
   return(fit)
-}
-# test
-TestModel = function(sim, obs) {
-  test = data.frame('RMSE' = rmse(obs, sim),
-                    'Rsquared' = cor(obs, sim)^2,
-                    'MAE' = mae(obs, sim))
-  return(test)
 }
 
 # stats and plot functions ####
@@ -166,6 +149,10 @@ SummAccuracy = function(model, train_tech, pred, targ) {
 # main function ####
 GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results,
                        save_models, models_dir, plots_dir, cores_left, inmet) {
+  
+  data_path = './result/sample.csv'
+  weather_var = 'cdh'
+  
   # load data
   raw_data = read.csv(data_path)
   str(raw_data)
@@ -176,7 +163,7 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
   # edit sample
   raw_data$epw = inmet[raw_data$epw, weather_var]
   # create dummy variables
-  raw_data = DefFactors(raw_data, qual_vars)
+  raw_data[, qual_vars] = lapply(raw_data[, qual_vars], factor)
   dummy_data = CreateDummies(raw_data)
   # split data into train and test sets
   raw_data = lapply(list('train' = TRUE, 'test' = FALSE), SplitData, raw_data, 0.8)
@@ -185,7 +172,7 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
   tune_grids = list(lm = NULL,
                     svmr = expand.grid(.sigma = 0.034, .C = 22), # OK
                     svmp = expand.grid(.degree = 5, .scale = 0.05, .C = 0.15), # OK
-                    brnn = expand.grid(.neurons = 1:40))
+                    brnn = expand.grid(.neurons = 30:40))
   models_list = list(lm = 'lm', svmr = 'svmRadial', svmp = 'svmPoly', brnn = 'brnn')
   models = mapply(FitModel, models_list[c(1, 4)], tune_grids[c(1, 4)], SIMPLIFY = FALSE,
                   MoreArgs = list('cv', nfolds, dummy_data$train, cores_left))
@@ -213,7 +200,7 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
     GenAccuracyTable(models, predictions, dummy_data$test$targ, suffix, plots_dir)
   }
   if (save_models) {
-    saveRDS(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
+    save(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
   } else {
     return(models)
   }
