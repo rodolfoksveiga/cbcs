@@ -1,12 +1,30 @@
 # main function ####
-TidySample = function(sample_path, seeds_dir, models_dir, epws_dir, inmet) {
-  sample = read.csv(sample_path, stringsAsFactors = FALSE)
-  quals = c('hvac', 'afn', 'boundaries', 'envelope', 'epw')
-  sample[, quals] = floor(sample[, quals])
+# join samples
+JoinSamples = function(saltelli_path, sample_path) {
+  quals = c('hvac', 'afn', 'boundaries', 'envelope')
   hvac = c('split', 'vrf')
   afn = c('smart', 'min', 'inter', 'max')
   boundaries = c('adiabatic', 'outdoors')
   envelope = c('heavy', 'light')
+  sample = read.csv(sample_path)
+  sample[, quals] = mapply(function(x, y) match(x, y), sample[, quals],
+                           list(hvac, afn, boundaries, envelope))
+  cols = colnames(sample)[-ncol(sample)]
+  saltelli_path %>%
+    read.csv() %>%
+    left_join(sample, by = cols) %>%
+    write.csv(saltelli_path, row.names = FALSE)
+}
+# tidy sample
+TidySample = function(sample_path, seeds_dir, models_dir, epws_dir, inmet) {
+  quals = c('hvac', 'afn', 'boundaries', 'envelope', 'epw')
+  hvac = c('split', 'vrf')
+  afn = c('smart', 'min', 'inter', 'max')
+  boundaries = c('adiabatic', 'outdoors')
+  envelope = c('heavy', 'light')
+  sample = read.csv(sample_path)
+  sample[, quals] = floor(sample[, quals])
+  write.csv(sample, sample_path, row.names = FALSE)
   quals = quals[-length(quals)]
   sample[, quals] = mapply(function(x, y) y[x], sample[, quals],
                            list(hvac, afn, boundaries, envelope))

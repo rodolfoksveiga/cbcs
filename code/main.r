@@ -1,7 +1,8 @@
 # avoid undesirable outputs on prompt
 invisible({
   # load libraries and global environment ####
-  pkgs = c('dplyr', 'jsonlite', 'reticulate', 'parallel', 'purrr', 'stringr', 'tibble')
+    pkgs = c('dplyr', 'jsonlite', 'reticulate',
+           'parallel', 'purrr', 'stringr', 'tibble')
   lapply(pkgs, library, character.only = TRUE)
   codes = c('build_model', 'calc_targets', 'run_ep_sim', 'tidy_sample')
   codes = paste0('./code/', codes, '.r')
@@ -9,7 +10,7 @@ invisible({
   inmet = read.csv('./source/inmet_list.csv')
   
   # variables ####
-  sobol_path = './result/sobol_sample.csv'
+  saltelli_path = './result/saltelli_sample.csv'
   seeds_dir = './seed/'
   models_dir = '~/rolante/cbcs/model/'
   epws_dir = '~/rolante/weather/'
@@ -21,7 +22,7 @@ invisible({
   # generate sample
   py_run_file('./code/saltelli_sample.py')
   # read and tidy up sample
-  sample = TidySample(sobol_path, seeds_dir, models_dir, epws_dir, inmet)
+  sample = TidySample(saltelli_path, seeds_dir, models_dir, epws_dir, inmet)
   # build cases
   mcmapply(BuildModel, sample$seed_path, sample$afn, sample$area, sample$atm, sample$azimuth,
            sample$boundaries, sample$cop, sample$envelope, sample$lights, sample$shgc,
@@ -32,4 +33,6 @@ invisible({
   sample = CalcTargets(sample, output_dir)
   # write sample file 
   write.csv(sample, sample_path, row.names = FALSE)
+  # join samples
+  JoinSamples(saltelli_path, sample_path)
 })

@@ -24,7 +24,7 @@ CreateDummies = function(data) {
 SplitData = function(train, data, train_prop, seed = 100) {
   # reproduce
   set.seed(seed)
-  train_part = createDataPartition(data$targ, p = train_prop, list = F)
+  train_part = createDataPartition(data$targ, p = train_prop, list = FALSE)
   if(train) {
     data = data[train_part, ]
   } else {
@@ -149,10 +149,6 @@ SummAccuracy = function(model, train_tech, pred, targ) {
 # main function ####
 GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results,
                        save_models, models_dir, plots_dir, cores_left, inmet) {
-  
-  data_path = './result/sample.csv'
-  weather_var = 'cdh'
-  
   # load data
   raw_data = read.csv(data_path)
   str(raw_data)
@@ -169,13 +165,13 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
   raw_data = lapply(list('train' = TRUE, 'test' = FALSE), SplitData, raw_data, 0.8)
   dummy_data = lapply(list('train' = TRUE, 'test' = FALSE), SplitData, dummy_data, 0.8)
   # train
-  tune_grids = list(lm = NULL,
-                    svmr = expand.grid(.sigma = 0.034, .C = 22), # OK
-                    svmp = expand.grid(.degree = 5, .scale = 0.05, .C = 0.15), # OK
-                    brnn = expand.grid(.neurons = 30:40))
   models_list = list(lm = 'lm', svmr = 'svmRadial', svmp = 'svmPoly', brnn = 'brnn')
-  models = mapply(FitModel, models_list[c(1, 4)], tune_grids[c(1, 4)], SIMPLIFY = FALSE,
-                  MoreArgs = list('cv', nfolds, dummy_data$train, cores_left))
+  tune_grids = list(lm = NULL,
+                    svmr = expand.grid(.sigma = 0.034, .C = 22),
+                    svmp = expand.grid(.degree = 5, .scale = 0.05, .C = 0.15),
+                    brnn = expand.grid(.neurons = 30:40))
+  models = mapply(FitModel, models_list, tune_grids, SIMPLIFY = FALSE,
+                  MoreArgs = list('cv', nfolds, dummy_data$train, cores_left, tune_length))
   # test
   predictions = models %>%
     lapply(predict, newdata = dummy_data$test) %>%
