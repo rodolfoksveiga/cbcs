@@ -25,9 +25,9 @@ def GenSample(names, bounds, gap, qual_vars, size, output_dir, save_problem = Tr
 
 # main code
 names = ['hvac', 'afn', 'area', 'atm', 'azimuth', 'boundaries',
-         'cop', 'envelope', 'lights', 'shgc', 'epw']
+         'cop', 'envelope', 'lights', 'shgc', 'dbt']
 bounds = [[1, 3], [1, 5], [200, 1200], [5, 20], [0, 360], [1, 3],
-          [3, 6], [1, 3], [10, 24], [0.3, 0.7], [1, 412]]
-qual_vars = [0, 1, 5, 7, 10]
+          [3, 6], [1, 3], [10, 24], [0.3, 0.7], [10.834, 28.240]]
+qual_vars = [0, 1, 5, 7]
 output_dir = '/home/rodox/git/cbcs/result/'
 GenSample(names, bounds, 0.02, qual_vars, 500, output_dir)

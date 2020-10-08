@@ -7,6 +7,8 @@ JoinSamples = function(saltelli_path, sample_path) {
   boundaries = c('adiabatic', 'outdoors')
   envelope = c('heavy', 'light')
   sample = read.csv(sample_path)
+  epw = sapply(sample$dbt, function(x, y) which.min(abs(x - y)), inmet$tbsm)
+  sample$dbt = inmet$tbsm[epw]
   sample[, quals] = mapply(function(x, y) match(x, y), sample[, quals],
                            list(hvac, afn, boundaries, envelope))
   cols = colnames(sample)[-ncol(sample)]
@@ -17,19 +19,20 @@ JoinSamples = function(saltelli_path, sample_path) {
 }
 # tidy sample
 TidySample = function(sample_path, seeds_dir, models_dir, epws_dir, inmet) {
-  quals = c('hvac', 'afn', 'boundaries', 'envelope', 'epw')
+  quals = c('hvac', 'afn', 'boundaries', 'envelope')
   hvac = c('split', 'vrf')
   afn = c('smart', 'min', 'inter', 'max')
   boundaries = c('adiabatic', 'outdoors')
   envelope = c('heavy', 'light')
   sample = read.csv(sample_path)
   sample[, quals] = floor(sample[, quals])
+  epw = sapply(sample$dbt, function(x, y) which.min(abs(x - y)), inmet$tbsm)
+  sample$dbt = inmet$tbsm[epw]
   write.csv(sample, sample_path, row.names = FALSE)
-  quals = quals[-length(quals)]
   sample[, quals] = mapply(function(x, y) y[x], sample[, quals],
                            list(hvac, afn, boundaries, envelope))
   seed_paths = paste0(seeds_dir, 'seed_', sample$hvac, '.json')
-  epw_paths = paste0(epws_dir, inmet$arquivo_climatico[sample$epw], '.epw')
+  epw_paths = paste0(epws_dir, inmet$arquivo_climatico[epw], '.epw')
   sample = add_column(sample, seed_path = seed_paths, epw_path = epw_paths, .before = 1)
   sample = unique(sample)
   cases = str_pad(1:nrow(sample), 5, 'left', 0)

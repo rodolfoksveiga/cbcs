@@ -1,7 +1,7 @@
 # avoid undesirable outputs on prompt
 invisible({
   # load libraries and global environment ####
-    pkgs = c('dplyr', 'jsonlite', 'reticulate',
+  pkgs = c('dplyr', 'jsonlite', 'reticulate',
            'parallel', 'purrr', 'stringr', 'tibble')
   lapply(pkgs, library, character.only = TRUE)
   codes = c('build_model', 'calc_targets', 'run_ep_sim', 'tidy_sample')
