@@ -6,11 +6,11 @@ ApplySumOutputs = function(df, patterns) as.data.frame(t(sapply(patterns, SumOut
 
 # main function ####
 CalcTargets = function(sample, input_dir, unit = 'kwh') {
-  patterns = c(lights = 'Lights', fan = 'Fan',
-               heating = '(Heating|Heater)', cooling = '(Cooling|Defrost)',
-               appliances = '(?<!ATM_EQUIP|SERVIDOR)\\.Electric\\.Equipment',
-               atm = 'ATM_EQUIP\\.Electric\\.Equipment',
-               server = 'SERVIDOR\\.Electric\\.Equipment')
+  patterns = c(targ_lights = 'Lights', targ_fan = 'Fan',
+               targ_heating = '(Heating|Heater)', targ_cooling = '(Cooling|Defrost)',
+               targ_appliances = '(?<!ATM_EQUIP|SERVIDOR)\\.Electric\\.Equipment',
+               targ_atm = 'ATM_EQUIP\\.Electric\\.Equipment',
+               targ_server = 'SERVIDOR\\.Electric\\.Equipment')
   div = ifelse(unit == 'kwh', 3600000, 1000)
   dfs = input_dir %>%
     dir('\\.csv', full.names = TRUE) %>%
@@ -25,6 +25,6 @@ CalcTargets = function(sample, input_dir, unit = 'kwh') {
     select(-1:-4) %>%
     cbind(outputs)
   cols = (ncol(sample) - 7):ncol(sample)
-  sample[, cols] = sample[, cols]/(div*sample$area)
+  sample[, cols] = round(sample[, cols]/(div*sample$area), 1)
   return(sample)
 }

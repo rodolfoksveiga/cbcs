@@ -23,12 +23,12 @@ invisible({
   py_run_file('./code/saltelli_sample.py')
   # read and tidy up sample
   sample = TidySample(saltelli_path, seeds_dir, models_dir, epws_dir, inmet)
-  # build cases
-  mcmapply(BuildModel, sample$seed_path, sample$afn, sample$area, sample$atm, sample$azimuth,
-           sample$boundaries, sample$cop, sample$envelope, sample$lights, sample$shgc,
-           sample$model_path, mc.cores = detectCores() - cores_left)
-  # run simulations
-  ProcessEPSims(sample, output_dir, 0, inmet)
+  ## build cases
+  #mcmapply(BuildModel, sample$seed_path, sample$afn, sample$area, sample$atm, sample$azimuth,
+  #         sample$boundaries, sample$cop, sample$envelope, sample$lights, sample$shgc,
+  #         sample$model_path, mc.cores = detectCores() - cores_left)
+  ## run simulations
+  #ProcessEPSims(sample, output_dir, 0, inmet)
   # calculate targets and add them to the sample
   sample = CalcTargets(sample, output_dir)
   # write sample file 
