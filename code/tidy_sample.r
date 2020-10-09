@@ -11,10 +11,11 @@ JoinSamples = function(saltelli_path, sample_path) {
   sample$dbt = inmet$tbsm[epw]
   sample[, quals] = mapply(function(x, y) match(x, y), sample[, quals],
                            list(hvac, afn, boundaries, envelope))
-  cols = colnames(sample)[-ncol(sample)]
+  rm_cols = (ncol(sample) - 7):ncol(sample)
+  cols = colnames(sample)[-rm_cols]
   saltelli_path %>%
     read.csv() %>%
-    left_join(sample, by = cols) %>%
+    left_join(select(sample, -rm_cols[-1]), by = cols) %>%
     write.csv(saltelli_path, row.names = FALSE)
 }
 # tidy sample
