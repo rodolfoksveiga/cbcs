@@ -7,8 +7,8 @@ JoinSamples = function(saltelli_path, sample_path) {
   boundaries = c('adiabatic', 'outdoors')
   envelope = c('heavy', 'light')
   sample = read.csv(sample_path)
-  epw = sapply(sample$dbt, function(x, y) which.min(abs(x - y)), inmet$tbsm)
-  sample$dbt = inmet$tbsm[epw]
+  epw = sapply(sample$cdh, function(x, y) which.min(abs(x - y)), inmet$cdh)
+  sample$cdh = inmet$cdh[epw]
   sample[, quals] = mapply(function(x, y) match(x, y), sample[, quals],
                            list(hvac, afn, boundaries, envelope))
   rm_cols = (ncol(sample) - 7):ncol(sample)
@@ -27,8 +27,8 @@ TidySample = function(sample_path, seeds_dir, models_dir, epws_dir, inmet) {
   envelope = c('heavy', 'light')
   sample = read.csv(sample_path)
   sample[, quals] = floor(sample[, quals])
-  epw = sapply(sample$dbt, function(x, y) which.min(abs(x - y)), inmet$tbsm)
-  sample$dbt = inmet$tbsm[epw]
+  epw = sapply(sample$cdh, function(x, y) which.min(abs(x - y)), inmet$cdh)
+  sample$cdh = inmet$cdh[epw]
   write.csv(sample, sample_path, row.names = FALSE)
   sample[, quals] = mapply(function(x, y) y[x], sample[, quals],
                            list(hvac, afn, boundaries, envelope))
