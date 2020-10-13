@@ -1,6 +1,7 @@
 invisible({
-  pkgs = c('ggcorrplot', 'dplyr', 'forcats', 'ggthemr', 'ggplot2', 'gridExtra',
-           'mgcv', 'moments', 'jsonlite', 'purrr', 'stringr', 'tidyr', 'RJSONIO')
+  pkgs = c('ggcorrplot', 'dplyr', 'forcats', 'ggthemr', 'ggplot2',
+           'gridExtra', 'mgcv', 'moments', 'jsonlite', 'purrr', 'stringr',
+           'tidyr', 'reshape2', 'RColorBrewer', 'RJSONIO')
   lapply(pkgs, library, character.only = TRUE)
 })
 
@@ -24,8 +25,8 @@ PlotAreaEUI = function(data_path, output_dir) {
           axis.text = element_text(size = 14),
           legend.title = element_text(size = 16, face = 'bold'),
           legend.text = element_text(size = 15),
-          legend.position = 'bottom')
-  WritePlot(plot, 'area_eui', output_dir)
+          legend.position = 'bottom') %>%
+    WritePlot('area_eui', output_dir)
   ggthemr_reset()
 }
 # plot weather correlation using linear models
@@ -50,8 +51,8 @@ PlotWeatherVar = function(dbt_path, cdh_path, output_dir) {
           axis.text.y = element_text(size = 14),
           axis.text.x = element_text(size = 14))
   ggthemr('pale', layout = 'scientific')
-  plot = grid.arrange(plot1, plot2, ncol = 2)
-  WritePlot(plot, 'weather_var_imp', output_dir)
+  plot = grid.arrange(plot1, plot2, ncol = 2) %>%
+    WritePlot('weather_var_imp', output_dir)
   ggthemr_reset()
 }
 # plot target distribution
@@ -66,8 +67,8 @@ PlotTargDist = function(sample_path, output_dir) {
     geom_text(aes(x = 250, y = 0.0095), label = paste('Kurtosis =', kurt), size = 7) +
     labs(x = 'EUI (kWh/m².year)', y = 'Frequency') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
-          axis.text = element_text(size = 14))
-  WritePlot(plot, 'targ_dist', output_dir)
+          axis.text = element_text(size = 14)) %>%
+    WritePlot('targ_dist', output_dir)
   ggthemr_reset()
 }
 # plot sobol total index
@@ -84,19 +85,25 @@ PlotST = function(result_path, problem_path, output_dir) {
     mutate(Variable = as.factor(vars)) %>%
     arrange(ST) %>%
     mutate(Variable = fct_inorder(Variable)) %>%
+    melt() %>%
     ggplot() +
-    geom_bar(aes(x = Variable, y = ST, fill = Variable),
-             stat = 'identity', colour = 'black', show.legend = FALSE) +
+    geom_bar(aes(x = Variable, y = value, fill = variable),
+             stat = 'identity', position = 'dodge', colour = 'black') +
     geom_hline(yintercept = c(0.025, 0.05), linetype = 'dashed', colour = 'black') +
+    labs(x = 'Input variable', y = 'Sensitivity index value (adim.)') +
     coord_flip() +
-    scale_fill_brewer(palette = 'Paired') +
+    scale_fill_manual(name = 'Legend:', values = brewer.pal(2, 'Paired'),
+                      labels = c('1st order', 'Total effect')) +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text.x = element_text(size = 14),
-          axis.text.y = element_text(size = 14, angle = 30))
-  WritePlot(plot, 'sobol_barplot', output_dir)
+          axis.text.y = element_text(size = 14, angle = 30),
+          legend.title = element_text(size = 15, face = 'bold'),
+          legend.text = element_text(size = 14),
+          legend.position = 'bottom') %>%
+    WritePlot('sobol_barplot', output_dir)
   ggthemr_reset()
 }
-
+# plot energy consumption by end use
 PlotEUIEndUse = function(sample_path, output_dir) {
   cols = c('Lights', 'Fans', 'HVAC Heating', 'HVAC Cooling', 'Appliances', 'ATMs', 'Server')
   ggthemr('pale', layout = 'scientific')
@@ -114,10 +121,11 @@ PlotEUIEndUse = function(sample_path, output_dir) {
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text.x = element_text(size = 14),
           axis.text.y = element_text(size = 14, angle = 30),
-          plot.margin = margin(5.5, 20, 5.5, 5.5))
-  WritePlot(plot, 'eui_end_use', output_dir)
+          plot.margin = margin(5.5, 20, 5.5, 5.5)) %>%
+    WritePlot('eui_end_use', output_dir)
   ggthemr_reset()
 }
+# plot input correlation agains the energy consumption
 PlotEndUseCor = function(sample_path, output_dir) {
   ggthemr('pale', layout = 'scientific')
   plot = sample_path %>%
@@ -134,11 +142,10 @@ PlotEndUseCor = function(sample_path, output_dir) {
           axis.line = element_line(colour = 'lightgrey'),
           axis.ticks = element_line(colour = 'lightgrey'),
           legend.title = element_text(size = 15, face = 'bold', hjust = 0.5),
-          legend.text = element_text(size = 14, hjust = 1))
-  WritePlot(plot, 'corr_end_use', output_dir)
+          legend.text = element_text(size = 14, hjust = 1)) %>%
+    WritePlot('corr_end_use', output_dir)
   ggthemr_reset()
 }
-
 # define characteristics to save the plot
 WritePlot = function(plot, plot_name, output_dir) {
   # plot: plot variable 
