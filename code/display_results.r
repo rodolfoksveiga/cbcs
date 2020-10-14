@@ -5,6 +5,7 @@ invisible({
   lapply(pkgs, library, character.only = TRUE)
 })
 
+# plot functions ####
 # plot eui x area
 PlotAreaEUI = function(data_path, output_dir) {
   df = data_path %>%
@@ -19,14 +20,14 @@ PlotAreaEUI = function(data_path, output_dir) {
     geom_smooth(method = 'gam', se = FALSE,
                 aes(colour = 'Generalized Additive Model')) +
     geom_text(x = 2500, y = 750, label = paste('R² =', rsquared), size = 7) +
-    labs(x = 'Area (m²)', y = 'EUI (kWh/m².year)\n') +
+    labs(x = 'Area (m²)', y = 'EUI (kWh/m².year)') +
     scale_color_manual(name = 'Legend:', values = c('Generalized Additive Model' = 'red')) +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text = element_text(size = 14),
           legend.title = element_text(size = 16, face = 'bold'),
           legend.text = element_text(size = 15),
-          legend.position = 'bottom') %>%
-    WritePlot('area_eui', output_dir)
+          legend.position = 'bottom')
+  WritePlot(plot, 'area_eui', output_dir)
   ggthemr_reset()
 }
 # plot weather correlation using linear models
@@ -39,20 +40,20 @@ PlotWeatherVar = function(dbt_path, cdh_path, output_dir) {
     geom_point(size = 0.2, colour = 'black') +
     geom_smooth(method = 'lm', se = FALSE, colour = 'red') +
     geom_text(aes(x = 18.5, y = 265), label = paste('R² =', rdbt), size = 7) +
-    labs(x = '\nmDBT', y = 'EUI (kWh/m².year)') +
+    labs(x = 'mDBT', y = 'EUI (kWh/m².year)') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text = element_text(size = 14))
   plot2 = ggplot(cdh, aes(y = targ, x = cdh)) +
     geom_point(colour = 'black', size = 0.2) +
     geom_smooth(method = 'lm', se = FALSE, colour = 'red') +
     geom_text(aes(x = 19000, y = 265), label = paste('R² =', rcdh), size = 7) +
-    labs(x = '\nCDH', y = 'EUI (kWh/m².year)') +
+    labs(x = 'CDH', y = 'EUI (kWh/m².year)') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text.y = element_text(size = 14),
           axis.text.x = element_text(size = 14))
   ggthemr('pale', layout = 'scientific')
-  plot = grid.arrange(plot1, plot2, ncol = 2) %>%
-    WritePlot('weather_var_imp', output_dir)
+  plot = grid.arrange(plot1, plot2, ncol = 2)
+  WritePlot(plot, 'weather_var_imp', output_dir)
   ggthemr_reset()
 }
 # plot target distribution
@@ -67,8 +68,8 @@ PlotTargDist = function(sample_path, output_dir) {
     geom_text(aes(x = 250, y = 0.0095), label = paste('Kurtosis =', kurt), size = 7) +
     labs(x = 'EUI (kWh/m².year)', y = 'Frequency') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
-          axis.text = element_text(size = 14)) %>%
-    WritePlot('targ_dist', output_dir)
+          axis.text = element_text(size = 14))
+  WritePlot(plot, 'targ_dist', output_dir)
   ggthemr_reset()
 }
 # plot sobol total index
@@ -89,6 +90,8 @@ PlotST = function(result_path, problem_path, output_dir) {
     ggplot() +
     geom_bar(aes(x = Variable, y = value, fill = variable),
              stat = 'identity', position = 'dodge', colour = 'black') +
+    geom_text(aes(x = Variable, y = value, label = round(value, 3)),
+              position = position_dodge2(width = 1), hjust = -0.15) +
     geom_hline(yintercept = c(0.025, 0.05), linetype = 'dashed', colour = 'black') +
     labs(x = 'Input variable', y = 'Sensitivity index value (adim.)') +
     coord_flip() +
@@ -99,8 +102,8 @@ PlotST = function(result_path, problem_path, output_dir) {
           axis.text.y = element_text(size = 14, angle = 30),
           legend.title = element_text(size = 15, face = 'bold'),
           legend.text = element_text(size = 14),
-          legend.position = 'bottom') %>%
-    WritePlot('sobol_barplot', output_dir)
+          legend.position = 'bottom')
+  WritePlot(plot, 'sobol_barplot', output_dir)
   ggthemr_reset()
 }
 # plot energy consumption by end use
@@ -116,13 +119,13 @@ PlotEUIEndUse = function(sample_path, output_dir) {
     geom_boxplot(aes(x = key, y = value, fill = key),
                  outlier.size = 0.3, show.legend = FALSE) +
     coord_flip() +
-    labs(x = 'Energy end use', y = '\nEUI (kWh/m².year)') +
+    labs(x = 'Energy end use', y = 'EUI (kWh/m².year)') +
     scale_fill_brewer(palette = 'Paired') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text.x = element_text(size = 14),
           axis.text.y = element_text(size = 14, angle = 30),
-          plot.margin = margin(5.5, 20, 5.5, 5.5)) %>%
-    WritePlot('eui_end_use', output_dir)
+          plot.margin = margin(5.5, 20, 5.5, 5.5))
+  WritePlot(plot, 'eui_end_use', output_dir)
   ggthemr_reset()
 }
 # plot input correlation agains the energy consumption
@@ -142,8 +145,8 @@ PlotEndUseCor = function(sample_path, output_dir) {
           axis.line = element_line(colour = 'lightgrey'),
           axis.ticks = element_line(colour = 'lightgrey'),
           legend.title = element_text(size = 15, face = 'bold', hjust = 0.5),
-          legend.text = element_text(size = 14, hjust = 1)) %>%
-    WritePlot('corr_end_use', output_dir)
+          legend.text = element_text(size = 14, hjust = 1))
+  WritePlot(plot, 'corr_end_use', output_dir)
   ggthemr_reset()
 }
 # define characteristics to save the plot
@@ -157,11 +160,12 @@ WritePlot = function(plot, plot_name, output_dir) {
   dev.off()
 }
 
-# application ####
-output_dir = './plot_table/'
-PlotAreaEUI('./source/real_data.csv', output_dir)
-PlotWeatherVar('./result/sample_dbt.csv', './result/sample.csv', output_dir)
-PlotEUIEndUse('./result/sample.csv', output_dir)
-PlotEndUseCor('./result/sample.csv', './plot_table/')
-PlotST('./result/sobol_analysis.json', './result/sobol_problem.json', output_dir)
-PlotTargDist('./result/sample.csv', output_dir)
+# main function ####
+DisplayResults = function(rd_path, sample_path, sdbt_path, sa_path, sp_path, output_dir) {
+  PlotAreaEUI(rd_path, output_dir)
+  PlotWeatherVar(sdbt_path, sample_path, output_dir)
+  PlotEUIEndUse(sample_path, output_dir)
+  PlotEndUseCor(sample_path, output_dir)
+  PlotST(sa_path, sp_path, output_dir)
+  PlotTargDist(sample_path, output_dir)
+}

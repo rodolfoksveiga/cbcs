@@ -4,7 +4,7 @@ invisible({
   pkgs = c('dplyr', 'jsonlite', 'reticulate',
            'parallel', 'purrr', 'stringr', 'tibble')
   lapply(pkgs, library, character.only = TRUE)
-  codes = c('build_model', 'calc_targets', 'run_ep_sim', 'tidy_sample')
+  codes = c('build_model', 'calc_targets', 'display_results', 'run_ep_sim', 'tidy_sample')
   codes = paste0('./code/', codes, '.r')
   lapply(codes, source)
   inmet = read.csv('./source/inmet_list.csv')
@@ -16,6 +16,7 @@ invisible({
   epws_dir = '~/rolante/weather/'
   output_dir = '~/rolante/cbcs/output/'
   sample_path = './result/sample.csv'
+  plot_dir = './plot_table/'
   cores_left = 0
   
   # main code ####
@@ -35,4 +36,9 @@ invisible({
   write.csv(sample, sample_path, row.names = FALSE)
   # join samples
   JoinSamples(saltelli_path, sample_path)
+  # perform sobolo analysis
+  py_run_file('./code/sobol_analysis.py')
+  # plot results
+  DisplayResults('./source/real_data.csv', sample_path, './result/sample_dbt.csv',
+                 './result/sobol_analysis.json', './result/sobol_problem.json', plot_dir)
 })

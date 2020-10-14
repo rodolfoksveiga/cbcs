@@ -30,4 +30,4 @@ bounds = [[1, 3], [1, 5], [200, 1200], [5, 20], [0, 360], [1, 3],
           [3, 6], [1, 3], [10, 24], [0.3, 0.7], [1957, 84723]]
 qual_vars = [0, 1, 5, 7]
 output_dir = '/home/rodox/git/cbcs/result/'
-GenSample(names, bounds, 0.02, qual_vars, 500, output_dir)
+GenSample(names, bounds, 0.02, qual_vars, 2000, output_dir)
