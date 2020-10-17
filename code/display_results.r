@@ -72,8 +72,8 @@ PlotTargDist = function(sample_path, output_dir) {
   WritePlot(plot, 'targ_dist', output_dir)
   ggthemr_reset()
 }
-# plot sobol total index
-PlotST = function(result_path, problem_path, output_dir) {
+# plot sobol effects
+PlotSA = function(result_path, problem_path, output_dir) {
   vars = problem_path %>%
     read_json() %>%
     pluck('names') %>%
@@ -85,7 +85,8 @@ PlotST = function(result_path, problem_path, output_dir) {
     as.data.frame() %>%
     mutate(Variable = as.factor(vars)) %>%
     arrange(ST) %>%
-    mutate(Variable = fct_inorder(Variable)) %>%
+    mutate(Variable = fct_inorder(Variable),
+           S1 = ifelse(S1 < 0, 0, S1)) %>%
     melt() %>%
     ggplot() +
     geom_bar(aes(x = Variable, y = value, fill = variable),
@@ -166,6 +167,6 @@ DisplayResults = function(rd_path, sample_path, sdbt_path, sa_path, sp_path, out
   PlotWeatherVar(sdbt_path, sample_path, output_dir)
   PlotEUIEndUse(sample_path, output_dir)
   PlotEndUseCor(sample_path, output_dir)
-  PlotST(sa_path, sp_path, output_dir)
+  PlotSA(sa_path, sp_path, output_dir)
   PlotTargDist(sample_path, output_dir)
 }

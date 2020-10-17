@@ -156,10 +156,10 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
   qual_vars = c('hvac', 'afn', 'boundaries', 'envelope')
   quant_vars = colnames(raw_data[-length(raw_data)])
   quant_vars = quant_vars[!quant_vars %in% qual_vars]
+  raw_data[, qual_vars] = lapply(raw_data[, qual_vars], factor)
   # edit sample
   raw_data$epw = inmet[raw_data$epw, weather_var]
   # create dummy variables
-  raw_data[, qual_vars] = lapply(raw_data[, qual_vars], factor)
   dummy_data = CreateDummies(raw_data)
   # split data into train and test sets
   raw_data = lapply(list('train' = TRUE, 'test' = FALSE), SplitData, raw_data, 0.8)
