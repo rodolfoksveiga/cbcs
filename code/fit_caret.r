@@ -160,8 +160,8 @@ SummAccuracy = function(model, train_tech, pred, targ) {
 }
 
 # main function ####
-GenMLModels = function(data_path, nfolds, tune_length, tune_grid,
-                       sa_path, threshold, save_results, save_models, models_dir,
+GenMLModels = function(threshold, data_path, nfolds, tune_length, tune_grid,
+                       sa_path, save_results, save_models, models_dir,
                        plots_dir, cores_left, inmet) {
   # load data
   raw_data = read.csv(data_path)
@@ -184,20 +184,27 @@ GenMLModels = function(data_path, nfolds, tune_length, tune_grid,
   models_list = list(lm = 'lm', svmr = 'svmRadial', brnn = 'brnn')
   models = mapply(FitModel, models_list, tune_grid, SIMPLIFY = FALSE,
                   MoreArgs = list('cv', nfolds, dummy_data$train, cores_left, tune_length))
-  # test
-  predictions = models %>%
-    lapply(predict, newdata = dummy_data$test) %>%
-    as.data.frame()
-  # plots and results
+  # define a suffix
+  suffix = paste0('f', nfolds, '_', ncol(raw_data$train))
+  # write models
+  if (save_models) {
+    saveRDS(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
+  } else {
+    return(models)
+  }
   # stats comparison between models
-  suffix = paste0(weather_var, '_f', nfolds, '_', ncol(raw_data$train))
   models_comp = CompModels(models)
   models_summ = summary(models_comp)
+  # write plots
   if (save_results) {
     # plot comparison between models
     PlotComp(models_comp, suffix, plots_dir)
     # plot training process
     mapply(PlotFit, models[-1], names(models[-1]), suffix, MoreArgs = list(plots_dir))
+    # generate prediction for further use
+    predictions = models %>%
+      lapply(predict, newdata = dummy_data$test) %>%
+      as.data.frame()
     # plot model performance
     mapply(PlotPerf, names(models), predictions,
            MoreArgs = list(dummy_data$test$targ, suffix, plots_dir))
@@ -207,15 +214,12 @@ GenMLModels = function(data_path, nfolds, tune_length, tune_grid,
     # generate accuracy table
     GenAccuracyTable(models, predictions, dummy_data$test$targ, suffix, plots_dir)
   }
-  if (save_models) {
-    saveRDS(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
-  } else {
-    return(models)
-  }
 }
 
 # application ####
-tune_grid = list(NULL)
-GenMLModels('./result/sample.csv', 2, 10, tune_grid,
-            './result/sobol_analysis.json', 0, TRUE, TRUE,
-            './result/', './plot_table/', 0, inmet)
+tune_grid = list(lm = NULL,
+                 svmr = expand.grid(.sigma = 0.04, .C = sapply(1:7, function(x) 2^x)),
+                 brnn = expand.grid(.neurons = seq(32, 44, 2)))
+lapply(c(0, 0.025, 0.05), GenMLModels, './result/sample_cdh.csv',
+       2, NULL, tune_grid, './result/sobol_analysis_cdh.json',
+       TRUE, TRUE, './result/', './plot_table/', 0, inmet)
