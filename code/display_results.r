@@ -37,16 +37,16 @@ PlotWeatherVar = function(dbt_path, cdh_path, output_dir) {
   cdh = read.csv(cdh_path)
   rcdh = round(summary(lm(targ ~ cdh, cdh))$r.squared, 3)
   plot1 = ggplot(dbt, aes(y = targ, x = dbt)) +
-    geom_point(size = 0.2, colour = 'black') +
+    geom_point(size = 0.2, colour = 'black', alpha = 0.25) +
     geom_smooth(method = 'lm', se = FALSE, colour = 'red') +
-    geom_text(aes(x = 18.5, y = 265), label = paste('R² =', rdbt), size = 7) +
+    geom_text(aes(x = 18.5, y = 275), label = paste('R² =', rdbt), size = 7) +
     labs(x = 'mDBT', y = 'EUI (kWh/m².year)') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text = element_text(size = 14))
   plot2 = ggplot(cdh, aes(y = targ, x = cdh)) +
-    geom_point(colour = 'black', size = 0.2) +
+    geom_point(colour = 'black', size = 0.2, alpha = 0.25) +
     geom_smooth(method = 'lm', se = FALSE, colour = 'red') +
-    geom_text(aes(x = 19000, y = 265), label = paste('R² =', rcdh), size = 7) +
+    geom_text(aes(x = 19000, y = 300), label = paste('R² =', rcdh), size = 7) +
     labs(x = 'CDH', y = 'EUI (kWh/m².year)') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text.y = element_text(size = 14),

@@ -1,7 +1,7 @@
 # load libraries and global environment ####
 invisible({
   pkgs = c('caret', 'doParallel', 'data.table', 'dplyr',
-           'ggplot2', 'hydroGOF', 'Metrics', 'parallel')
+           'ggplot2', 'hydroGOF', 'Metrics', 'parallel', 'purrr')
   # required packages to fit models
   # pkgs = c(pkgs, 'quantregForest', 'party', 'mboost', 'plyr', 'kernlab', 'brnn')
   lapply(pkgs, library, character.only = TRUE)
@@ -13,6 +13,19 @@ invisible({
 RenameRsq = function(x) sub('Rsquared', 'R²', x)
 
 # machine learning model functions ####
+# select features according to sobol analysis
+SelectFeats = function(data, sa_path, threshold) {
+  unvar = sa_path %>%
+    RJSONIO::fromJSON() %>%
+    keep(names(.) %in% c('S1', 'ST')) %>%
+    as.data.frame() %>%
+    mutate(var = colnames(data)[-length(data)]) %>%
+    filter(ST <= threshold) %>%
+    pull(var)
+  data = data %>%
+    select(-all_of(unvar))
+  return(data)
+}
 # create dummy variables
 CreateDummies = function(data) {
   dummy_model = dummyVars(targ ~ ., data = data)
@@ -147,30 +160,29 @@ SummAccuracy = function(model, train_tech, pred, targ) {
 }
 
 # main function ####
-GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results,
-                       save_models, models_dir, plots_dir, cores_left, inmet) {
+GenMLModels = function(data_path, nfolds, tune_length, tune_grid,
+                       sa_path, threshold, save_results, save_models, models_dir,
+                       plots_dir, cores_left, inmet) {
   # load data
   raw_data = read.csv(data_path)
-  str(raw_data)
+  index = !grepl('targ_', colnames(raw_data))
+  raw_data = raw_data[, index]
   # define qualitative and quantitative variables
   qual_vars = c('hvac', 'afn', 'boundaries', 'envelope')
   quant_vars = colnames(raw_data[-length(raw_data)])
   quant_vars = quant_vars[!quant_vars %in% qual_vars]
   raw_data[, qual_vars] = lapply(raw_data[, qual_vars], factor)
-  # edit sample
-  raw_data$epw = inmet[raw_data$epw, weather_var]
+  # select features according to sensitivity analysis
+  raw_data = SelectFeats(raw_data, sa_path, threshold)
   # create dummy variables
   dummy_data = CreateDummies(raw_data)
+  summary(raw_data)
   # split data into train and test sets
   raw_data = lapply(list('train' = TRUE, 'test' = FALSE), SplitData, raw_data, 0.8)
   dummy_data = lapply(list('train' = TRUE, 'test' = FALSE), SplitData, dummy_data, 0.8)
   # train
-  models_list = list(lm = 'lm', svmr = 'svmRadial', svmp = 'svmPoly', brnn = 'brnn')
-  tune_grids = list(lm = NULL,
-                    svmr = expand.grid(.sigma = 0.034, .C = 22),
-                    svmp = expand.grid(.degree = 5, .scale = 0.05, .C = 0.15),
-                    brnn = expand.grid(.neurons = 30:40))
-  models = mapply(FitModel, models_list, tune_grids, SIMPLIFY = FALSE,
+  models_list = list(lm = 'lm', svmr = 'svmRadial', brnn = 'brnn')
+  models = mapply(FitModel, models_list, tune_grid, SIMPLIFY = FALSE,
                   MoreArgs = list('cv', nfolds, dummy_data$train, cores_left, tune_length))
   # test
   predictions = models %>%
@@ -178,7 +190,7 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
     as.data.frame()
   # plots and results
   # stats comparison between models
-  suffix = paste0(weather_var, '_f', nfolds)
+  suffix = paste0(weather_var, '_f', nfolds, '_', ncol(raw_data$train))
   models_comp = CompModels(models)
   models_summ = summary(models_comp)
   if (save_results) {
@@ -196,12 +208,14 @@ GenMLModels = function(data_path, weather_var, nfolds, tune_length, save_results
     GenAccuracyTable(models, predictions, dummy_data$test$targ, suffix, plots_dir)
   }
   if (save_models) {
-    save(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
+    saveRDS(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
   } else {
     return(models)
   }
 }
 
 # application ####
-GenMLModels('./result/sample.csv', 'cdh', 5, NULL, TRUE, TRUE,
+tune_grid = list(NULL)
+GenMLModels('./result/sample.csv', 2, 10, tune_grid,
+            './result/sobol_analysis.json', 0, TRUE, TRUE,
             './result/', './plot_table/', 0, inmet)
