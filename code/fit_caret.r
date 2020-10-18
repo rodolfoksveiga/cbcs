@@ -220,6 +220,6 @@ GenMLModels = function(threshold, data_path, nfolds, tune_length, tune_grid,
 tune_grid = list(lm = NULL,
                  svmr = expand.grid(.sigma = 0.04, .C = sapply(1:7, function(x) 2^x)),
                  brnn = expand.grid(.neurons = seq(32, 44, 2)))
-lapply(c(0, 0.025, 0.05), GenMLModels, './result/sample_cdh.csv',
+GenMLModels(0.01, './result/sample_cdh.csv',
        2, NULL, tune_grid, './result/sobol_analysis_cdh.json',
        TRUE, TRUE, './result/', './plot_table/', 0, inmet)
