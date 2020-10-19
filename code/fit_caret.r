@@ -185,7 +185,7 @@ GenMLModels = function(threshold, data_path, nfolds, tune_length, tune_grid,
   models = mapply(FitModel, models_list, tune_grid, SIMPLIFY = FALSE,
                   MoreArgs = list('cv', nfolds, dummy_data$train, cores_left, tune_length))
   # define a suffix
-  suffix = paste0('f', nfolds, '_', ncol(raw_data$train))
+  suffix = paste0('f', nfolds, '_', ncol(raw_data$train) - 1)
   # write models
   if (save_models) {
     saveRDS(models, file = paste0(models_dir, 'models_', suffix, '.rds'))

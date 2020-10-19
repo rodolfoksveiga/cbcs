@@ -1,5 +1,5 @@
 invisible({
-  pkgs = c('ggcorrplot', 'dplyr', 'forcats', 'ggthemr', 'ggplot2',
+  pkgs = c('ggcorrplot', 'caret', 'dplyr', 'forcats', 'ggthemr', 'ggplot2',
            'gridExtra', 'mgcv', 'moments', 'jsonlite', 'purrr', 'stringr',
            'tidyr', 'reshape2', 'RColorBrewer', 'RJSONIO')
   lapply(pkgs, library, character.only = TRUE)
@@ -66,7 +66,7 @@ PlotTargDist = function(sample_path, output_dir) {
     geom_density(aes(x = targ), colour = 'black', fill = 'blue', alpha = 0.1) +
     geom_text(aes(x = 250, y = 0.0105), label = paste('Skewness =', skew), size = 7) +
     geom_text(aes(x = 250, y = 0.0095), label = paste('Kurtosis =', kurt), size = 7) +
-    labs(x = 'EUI (kWh/m².year)', y = 'Frequency') +
+    labs(x = 'EUI (kWh/m².year)', y = 'Frequency (%)') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text = element_text(size = 14))
   WritePlot(plot, 'targ_dist', output_dir)
@@ -93,7 +93,7 @@ PlotSA = function(result_path, problem_path, output_dir) {
              stat = 'identity', position = 'dodge', colour = 'black') +
     geom_text(aes(x = Variable, y = value, label = round(value, 3)),
               position = position_dodge2(width = 1), hjust = -0.15) +
-    geom_hline(yintercept = c(0.025, 0.05), linetype = 'dashed', colour = 'black') +
+    geom_hline(yintercept = c(0.01, 0.025, 0.05), linetype = 'dashed', colour = 'black') +
     labs(x = 'Input variable', y = 'Sensitivity index value (adim.)') +
     coord_flip() +
     scale_fill_manual(name = 'Legend:', values = brewer.pal(2, 'Paired'),
@@ -150,6 +150,39 @@ PlotEndUseCor = function(sample_path, output_dir) {
   WritePlot(plot, 'corr_end_use', output_dir)
   ggthemr_reset()
 }
+PlotMLPerf = function(test_path, model_path, output_dir) {
+  test = read.csv(test_path)
+  model = readRDS(model_path)
+  pred = predict(model, newdata = test)
+  df = data.frame(pred, sim = test$targ, cdh = test$cdh)
+  df$cdh = cut(df$cdh, 3, labels = c('1870 ~ 29500', '29500 ~ 57100', '57100 ~ 84800'))
+  ggthemr('pale', layout = 'scientific')
+  plot1 = ggplot(df, aes(x = sim, y = pred)) +
+    geom_point(aes(colour = cdh), size = 0.2, alpha = 0.5) +
+    geom_abline(slope = 1, colour = 'black', size = 0.5) +
+    labs(x = 'Simulated Energy Consumption (kWh/m².year)',
+         y = 'Predicted Energy Consumption (kWh/m².year)') +
+    theme(axis.title = element_text(size = 16, face = 'bold'),
+          axis.text = element_text(size = 14),
+          axis.line = element_line(colour = 'lightgrey'),
+          axis.ticks = element_line(colour = 'lightgrey'),
+          legend.title = element_text(size = 15, face = 'bold', hjust = 0.5),
+          legend.text = element_text(size = 14, hjust = 1),
+          legend.position = 'bottom')
+  plot2 = ggplot(df) +
+    geom_density(aes(x = pred - sim, colour = cdh), alpha = 0.1) +
+    labs(x = 'Error (kWh/m².year)', y = 'Frequency (%)', colour = 'CDH (°): ') +
+    theme(axis.title = element_text(size = 16, face = 'bold'),
+          axis.text = element_text(size = 14),
+          axis.line = element_line(colour = 'lightgrey'),
+          axis.ticks = element_line(colour = 'lightgrey'),
+          legend.title = element_text(size = 15, face = 'bold', hjust = 0.5),
+          legend.text = element_text(size = 14, hjust = 1),
+          legend.position = 'bottom')
+  plot = grid.arrange(plot1, plot2, ncol = 2)
+  WritePlot(plot, 'model_perf', output_dir)
+  ggthemr_reset()
+}
 # define characteristics to save the plot
 WritePlot = function(plot, plot_name, output_dir) {
   # plot: plot variable 
@@ -169,4 +202,5 @@ DisplayResults = function(rd_path, sample_path, sdbt_path, sa_path, sp_path, out
   PlotEndUseCor(sample_path, output_dir)
   PlotSA(sa_path, sp_path, output_dir)
   PlotTargDist(sample_path, output_dir)
+  PlotMLPerf('./result/test_data.csv', './result/model.rds', './plot_table/')
 }
