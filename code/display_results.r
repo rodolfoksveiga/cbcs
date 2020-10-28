@@ -150,6 +150,7 @@ PlotEndUseCor = function(sample_path, output_dir) {
   WritePlot(plot, 'corr_end_use', output_dir)
   ggthemr_reset()
 }
+# plot machine learning performance
 PlotMLPerf = function(test_path, model_path, output_dir) {
   test = read.csv(test_path)
   model = readRDS(model_path)
@@ -182,6 +183,25 @@ PlotMLPerf = function(test_path, model_path, output_dir) {
   plot = grid.arrange(plot1, plot2, ncol = 2)
   WritePlot(plot, 'model_perf', output_dir)
   ggthemr_reset()
+}
+# plot study case performance
+PlotStudyPerf = function(study_path, model_path, dm_path, output_dir) {
+  study_path = 'source/study_data.csv'
+  model_path = 'result/model.rds'
+  dm_path = 'result/dummy_model_9.rds'
+  output_dir = 'plot_table/'
+  
+  vars = c('hvac', 'afn', 'area', 'atm', 'azimuth', 'boundaries',
+           'cop', 'envelope', 'lights', 'cdh', 'targ')
+  study = read.csv(study_path)
+  model = readRDS(model_path)
+  dummy_model = readRDS(dm_path)
+  dummy_study = predict(dummy_model, newdata = study[, vars])
+  pred = predict(model, newdata = dummy_study)
+  df = data.frame(pred, sim = test$targ, cdh = test$cdh)
+  
+  
+  WritePlot(plot, 'study_perf', output_dir)
 }
 # define characteristics to save the plot
 WritePlot = function(plot, plot_name, output_dir) {
