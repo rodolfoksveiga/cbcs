@@ -1,5 +1,4 @@
-hvac,afn,area,atm,azimuth,boundaries,cop,envelope,lights,shgc,cdh,targ,agencia,municipio
-vrf,smart,638,7.9,60,adiabatic,5,light,20.4,0.7,23883,185.5,caixa,belo_horizonte
-vrf,smart,652.5,5.6,180,outdoors,4.09,light,6.6,0.38,65930,134.2,sicredi,joao_pessoa
-split,smart,1459,8.2,10,outdoors,2.58,light,14.7,0.7,16624,110.3,bb,brasilia
-split,smart,574,8.2,134,outdoors,3,light,19.5,0.7,9481,184.7,santander,curitiba
+hvac,afn,area,atm,azimuth,boundaries,cop,envelope,lights,shgc,cdh,targ,case,agencia,municipio
+split,max,574,8.2,134,outdoors,3,light,19.5,0.7,9481,184.7,a,santander,curitiba
+vrf,min,638,7.9,60,outdoors,4.3,heavy,20.4,0.7,23883,185.5,b,caixa,belo_horizonte
+vrf,smart,652,5.6,180,outdoors,4.1,light,6.6,0.4,65930,134.2,c,sicredi,joao_pessoa

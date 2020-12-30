@@ -185,18 +185,18 @@ GenMLModels = function(threshold, data_path, nfolds, tune_length, tune_grid,
   models = mapply(FitModel, models_list, tune_grid, SIMPLIFY = FALSE,
                   MoreArgs = list('cv', nfolds, dummy_data$train, cores_left, tune_length))
   # define a suffix
-  suffix = paste0('f', nfolds, '_', ncol(raw_data$train) - 1)
+  suffix = paste0('_nvar', ncol(raw_data$train) - 1)
   # write models
   if (save_models) {
     saveRDS(models, file = paste0(models_dir, 'models_', suffix, '.rds'))
   } else {
     return(models)
   }
-  # stats comparison between models
-  models_comp = CompModels(models)
-  models_summ = summary(models_comp)
   # write plots
   if (save_results) {
+    # stats comparison between models
+    models_comp = CompModels(models)
+    models_summ = summary(models_comp)
     # plot comparison between models
     PlotComp(models_comp, suffix, plots_dir)
     # plot training process

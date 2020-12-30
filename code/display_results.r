@@ -58,6 +58,9 @@ PlotWeatherVar = function(dbt_path, cdh_path, output_dir) {
 }
 # plot target distribution
 PlotTargDist = function(sample_path, output_dir) {
+  sample_path = './result/saltelli_sample_cdh.csv'
+  output_dir = './plot_table/'
+  
   sample = read.csv(sample_path)
   kurt = round(kurtosis(sample$targ), 3)
   skew = round(skewness(sample$targ), 3)
@@ -66,7 +69,7 @@ PlotTargDist = function(sample_path, output_dir) {
     geom_density(aes(x = targ), colour = 'black', fill = 'blue', alpha = 0.1) +
     geom_text(aes(x = 250, y = 0.0105), label = paste('Skewness =', skew), size = 7) +
     geom_text(aes(x = 250, y = 0.0095), label = paste('Kurtosis =', kurt), size = 7) +
-    labs(x = 'EUI (kWh/m².year)', y = 'Frequency (%)') +
+    labs(x = 'EUI (kWh/m².year)', y = 'Relative Probability') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text = element_text(size = 14))
   WritePlot(plot, 'targ_dist', output_dir)
@@ -140,7 +143,7 @@ PlotEndUseCor = function(sample_path, output_dir) {
     cor() %>%
     as.data.frame() %>%
     select(-14:-12) %>%
-    ggcorrplot(method = 'circle', type = 'lower') +
+    ggcorrplot(method = 'square', type = 'lower', lab = TRUE, legend.title = 'Legend:') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text = element_text(size = 14),
           axis.line = element_line(colour = 'lightgrey'),
@@ -163,6 +166,7 @@ PlotMLPerf = function(test_path, model_path, output_dir) {
     geom_abline(slope = 1, colour = 'black', size = 0.5) +
     labs(x = 'Simulated Energy Consumption (kWh/m².year)',
          y = 'Predicted Energy Consumption (kWh/m².year)') +
+    scale_colour_brewer(palette = 'Dark2') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text = element_text(size = 14),
           axis.line = element_line(colour = 'lightgrey'),
@@ -172,7 +176,8 @@ PlotMLPerf = function(test_path, model_path, output_dir) {
           legend.position = 'bottom')
   plot2 = ggplot(df) +
     geom_density(aes(x = pred - sim, colour = cdh), alpha = 0.1) +
-    labs(x = 'Error (kWh/m².year)', y = 'Frequency (%)', colour = 'CDH (°): ') +
+    labs(x = 'Error (kWh/m².year)', y = 'Relative Probability', colour = 'CDH (°): ') +
+    scale_colour_brewer(palette = 'Dark2') +
     theme(axis.title = element_text(size = 16, face = 'bold'),
           axis.text = element_text(size = 14),
           axis.line = element_line(colour = 'lightgrey'),
@@ -184,25 +189,48 @@ PlotMLPerf = function(test_path, model_path, output_dir) {
   WritePlot(plot, 'model_perf', output_dir)
   ggthemr_reset()
 }
-# plot study case performance
-PlotStudyPerf = function(study_path, model_path, dm_path, output_dir) {
-  study_path = 'source/study_data.csv'
-  model_path = 'result/model.rds'
-  dm_path = 'result/dummy_model_9.rds'
-  output_dir = 'plot_table/'
-  
-  vars = c('hvac', 'afn', 'area', 'atm', 'azimuth', 'boundaries',
-           'cop', 'envelope', 'lights', 'cdh', 'targ')
-  study = read.csv(study_path)
-  model = readRDS(model_path)
-  dummy_model = readRDS(dm_path)
-  dummy_study = predict(dummy_model, newdata = study[, vars])
-  pred = predict(model, newdata = dummy_study)
-  df = data.frame(pred, sim = test$targ, cdh = test$cdh)
-  
-  
+# plot validation
+PlotStudyPerf = function(study_path, dummy_path, model_path, output_dir) {
+  data = study_path %>%
+    read.csv() %>%
+    cbind(source = 'Real') %>%
+    mutate(case = str_to_upper(case))
+  dummy_data = dummy_path %>%
+    readRDS() %>%
+    predict(newdata = data[, 1:12])
+  predictions = model_path %>%
+    readRDS() %>%
+    predict(newdata = dummy_data) %>%
+    as.data.frame() %>%
+    cbind(case = data$case, source = 'Prediction') %>%
+    rename(targ = '.')
+  authors = 'Borgstein and Lamberts (2014)'
+  borgstein = data.frame(
+    targ = sapply(data$cdh, function(x) 136.5 + 0.001984*x),
+    case = c('A', 'B', 'C'),
+    source = authors
+  )
+  data = data %>%
+    select(c('targ', 'case', 'source')) %>%
+    rbind(predictions, borgstein) %>%
+    mutate(source = factor(source, levels = c('Real', 'Prediction', authors)))
+  ggthemr('pale', layout = 'scientific')
+  plot = ggplot(data, aes(x = case, y = targ, fill = source)) +
+    geom_bar(stat = 'identity', position = 'dodge', colour = 'black') +
+    labs(x = 'Case', y = 'EUI (kWh/m².year)', fill = 'Legend:') +
+    geom_text(aes(label = round(targ, 1)), size = 4, vjust = -0.5,
+              position = position_dodge(width = 0.9)) +
+    scale_fill_brewer(palette = 'Dark2') +
+    theme(axis.title = element_text(size = 16, face = 'bold'),
+          axis.text.x = element_text(size = 14),
+          axis.text.y = element_text(size = 14),
+          legend.title = element_text(size = 15, face = 'bold'),
+          legend.text = element_text(size = 14),
+          legend.position = 'bottom')
   WritePlot(plot, 'study_perf', output_dir)
+  ggthemr_reset()
 }
+
 # define characteristics to save the plot
 WritePlot = function(plot, plot_name, output_dir) {
   # plot: plot variable 
@@ -223,4 +251,6 @@ DisplayResults = function(rd_path, sample_path, sdbt_path, sa_path, sp_path, out
   PlotSA(sa_path, sp_path, output_dir)
   PlotTargDist(sample_path, output_dir)
   PlotMLPerf('./result/test_data.csv', './result/model.rds', './plot_table/')
+  PlotStudyPerf('./source/study_data.csv', './result/dummy_nvar9.rds',
+                './result/model.rds', './plot_table/')
 }
