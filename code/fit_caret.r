@@ -56,10 +56,10 @@ FitModel = function(train_tech, tune_grid, samp_tech, nfolds, train_data,
   set.seed(seed)
   if (!is.null(tune_grid)) {
     fit = train(targ ~ ., train_data, trControl = fit_ctrl, tuneGrid = tune_grid,
-                method = train_tech, metric = eval, preProcess = 'BoxCox')
+                method = train_tech, metric = eval, preProcess = c('center', 'scaling'))
   } else {
     fit = train(targ ~ ., train_data, trControl = fit_ctrl, tuneLength = tune_length,
-                method = train_tech, metric = eval, preProcess = 'BoxCox')
+                method = train_tech, metric = eval, preProcess = c('center', 'scaling'))
   }
   registerDoSEQ()
   gc()
